@@ -1,12 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "drixit-blog",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Blog for Drixit (Michelle Pichardo-Munoz)",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "author": "John Beresford <jberesford@volcaus.com>",
   "dependencies": {
     "gatsby": "^4.24.3",
     "gatsby-plugin-feed": "^4.24.0",
@@ -30,7 +27,6 @@
   "devDependencies": {
     "prettier": "^2.7.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
     "gatsby"
   ],
