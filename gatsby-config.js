@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Michelle: The Website`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Michelle Pichardo-Munoz`,
+      summary: `the prettiest lady in the world.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `A place for Michelle to put stuff and things.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: null,
     },
   },
   plugins: [
@@ -76,8 +76,8 @@ module.exports = {
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   custom_elements: [{ "content:encoded": node.html }],
-                })
-              })
+                });
+              });
             },
             query: `
               {
@@ -119,4 +119,4 @@ module.exports = {
       },
     },
   ],
-}
+};
