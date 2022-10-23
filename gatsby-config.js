@@ -127,5 +127,6 @@ module.exports = {
       },
     },
     "gatsby-plugin-glslify",
+    "gatsby-plugin-netlify",
   ],
 };
