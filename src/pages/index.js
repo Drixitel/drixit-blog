@@ -22,7 +22,7 @@ const BlogIndex = ({ data, location }) => {
               gridTemplateColumns: "repeat(auto-fit, minmax(275px, 1fr))",
               alignItems: "stretch",
               justifyContent: "space-between",
-              gap: "0.5rem",
+              gap: "0.75rem",
             }}
           >
             {posts.slice(0, 3).map((post, idx) => {
@@ -32,11 +32,14 @@ const BlogIndex = ({ data, location }) => {
                   key={idx}
                   className="card"
                   style={{
-                    backgroundColor: "#393939",
+                    position: "relative",
+                    backgroundColor: "rgb(43 35 35)",
                     padding: "0 1.125rem",
                     borderRadius: "10px",
                     display: "grid",
-                    gridTemplateRows: "auto 200px auto",
+                    height: "350px",
+                    gridTemplateRows: "auto 1fr auto",
+                    gridTemplateColumns: "100%",
                   }}
                 >
                   <div className="head">
@@ -52,31 +55,80 @@ const BlogIndex = ({ data, location }) => {
                     >
                       {date}
                     </p>
-                    <hr
+                    {/* <hr
                       className="monochrome"
                       style={{
-                        background: "var(--color-text-light-mono)",
+                        background: "var(--color-text-light)",
                         width: "100%",
                       }}
-                    />
+                    /> */}
                   </div>
-                  <p style={{ overflowY: "auto" }}>{post.excerpt}</p>
+                  <p style={{ overflowY: "auto", zIndex: 2, marginTop: "1em" }}>
+                    {post.excerpt}
+                  </p>
 
                   <div
                     className="tags"
                     style={{
                       display: "flex",
-                      marginBottom: "0.75rem",
+                      alignItems: "flex-end",
+                      flexWrap: "wrap",
                       gap: "0.35rem",
+                      marginBottom: "0.75rem",
+                      maxWidth: "100%",
+                      zIndex: 2,
                     }}
                   >
                     {tags.map((tag, idx) => (
-                      <Tag tagName={tag} />
+                      <Tag key={idx} tagName={tag} />
                     ))}
                   </div>
                 </div>
               );
             })}
+          </div>
+        </section>
+
+        <section
+          style={{ position: "relative", padding: "3em 0", marginTop: "5em" }}
+        >
+          <div
+            className="bg"
+            style={{
+              position: "absolute",
+              top: "0",
+              bottom: "0",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "100vw",
+              zIndex: -1,
+              backgroundColor: "rgb(43, 35, 35)",
+            }}
+          />
+
+          <div className="wrapper">
+            <h1 style={{ margin: "0 0 1em" }}>Let's Talk!</h1>
+
+            <form name="contact" method="POST" data-netlify="true">
+              <p>
+                <label>
+                  Name:
+                  <input type="text" name="name" />
+                </label>
+              </p>
+              <p>
+                <label>
+                  Email:
+                  <input type="text" name="email" />
+                </label>
+              </p>
+              <p>
+                <label>
+                  Message:<textarea name="message" rows={5}></textarea>
+                </label>
+              </p>
+              <button type="submit">Send</button>
+            </form>
           </div>
         </section>
       </Layout>
@@ -100,7 +152,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { private: { ne: true } } }
+    ) {
       nodes {
         excerpt
         fields {

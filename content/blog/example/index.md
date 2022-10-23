@@ -1,9 +1,9 @@
 ---
-title: Hello World
+title: Example Post
 date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
-tags: ["physics", "math", "windows", "abc", "jeff", "samuel"]
-headerImage: ./header-img1.jpg
+description: "Contains examples of most of the blog's markdown functionality"
+tags: ["physics", "math"]
+private: true
 ---
 
 This is my first post on my new fake blog! How exciting!

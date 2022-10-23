@@ -1,8 +1,9 @@
 import * as React from "react";
 import { Link } from "gatsby";
+import Scene from "./scene";
 
 const NAVS = [
-  ["Blog", "/blog"],
+  ["Posts", "/posts"],
   ["About Me", "/about"],
 ];
 
@@ -10,7 +11,18 @@ const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;
 
-  const NavItem = ({ text, url }) => <Link to={url || `/${text}`}>{text}</Link>;
+  const NavItem = ({ text, url }) => (
+    <Link
+      to={url || `/${text}`}
+      style={{
+        fontWeight: 600,
+        fontFamily: "var(--fontFamily-sans)",
+        fontSize: "1.2em",
+      }}
+    >
+      {text}
+    </Link>
+  );
 
   const Header = ({ style, className = "", ...props }) => (
     <header
@@ -20,7 +32,7 @@ const Layout = ({ location, title, children }) => {
         alignItems: "center",
         justifyContent: "space-between",
         marginBottom: "1.125rem",
-        width: "var(--maxWidth-wrapper)",
+        width: "100%",
         ...style,
       }}
     >
@@ -28,7 +40,7 @@ const Layout = ({ location, title, children }) => {
         <Link to="/">{title}</Link>
       </h1>
 
-      <nav style={{ display: "flex", gap: "1rem" }}>
+      <nav style={{ display: "flex", gap: "3em" }}>
         {NAVS.map(([text, url], idx) => (
           <NavItem key={idx} text={text} url={url} />
         ))}
@@ -37,10 +49,12 @@ const Layout = ({ location, title, children }) => {
   );
 
   const Footer = () => (
-    <footer>
+    <footer style={{ marginTop: "2em" }}>
       © {new Date().getFullYear()}, Built by
       {` `}
-      <a href="https://www.john-beresford.com">John Beresford</a>
+      <a href="https://www.john-beresford.com" className="noAnim">
+        John Beresford
+      </a>
     </footer>
   );
 
@@ -51,15 +65,18 @@ const Layout = ({ location, title, children }) => {
           className="canvasWrapper"
           style={{
             height: "80vh",
+            maxHeight: "800px",
             width: "100vw",
             position: "absolute",
             display: "grid",
             justifyContent: "left",
             gridTemplateColumns: "1fr auto 1fr",
             gridTemplateRows: "auto 1fr",
+            background:
+              "linear-gradient(0deg, rgba(34,28,28,1) 0%, rgba(34,28,28,0) 100%)",
           }}
         >
-          <div
+          {/* <div
             className="canvas"
             style={{
               gridArea: "1 / 1 / 3 / 4",
@@ -68,10 +85,11 @@ const Layout = ({ location, title, children }) => {
               width: "100%",
               height: "100%",
             }}
-          ></div>
+          ></div> */}
+          <Scene />
           <Header
             className="global-wrapper"
-            style={{ gridRow: "1/2", gridColumn: "2/3", zIndex: 1 }}
+            style={{ gridRow: "1/2", gridColumn: "1/4", zIndex: 1 }}
           />
 
           <div
@@ -79,7 +97,7 @@ const Layout = ({ location, title, children }) => {
             style={{
               alignSelf: "end",
               gridRow: "2/3",
-              gridColumn: "2/3",
+              gridColumn: "1/4",
               width: "100%",
             }}
           >
@@ -93,7 +111,12 @@ const Layout = ({ location, title, children }) => {
         </div>
         <div
           className="spacer"
-          style={{ height: "80vh", pointerEvents: "none", touchAction: "none" }}
+          style={{
+            height: "80vh",
+            maxHeight: "800px",
+            pointerEvents: "none",
+            touchAction: "none",
+          }}
         ></div>
         <div className="global-wrapper">
           <main>{children}</main>

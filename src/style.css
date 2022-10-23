@@ -60,7 +60,7 @@
   --color-text-light-mono: #565656;
   --color-heading: #f5a2a2;
   --color-heading-black: #fff;
-  --color-accent: #a84242;
+  --color-accent: #ec5b5b;
   --color-bg: #221c1c;
 }
 
@@ -95,9 +95,52 @@ hr:not(.monochrome) {
   background: var(--color-accent);
 }
 
+code {
+  font-family: monospace !important;
+  background-color: #453434 !important;
+  color: var(--color-text) !important;
+}
+
 hr {
   height: 1px;
   border: 0;
+}
+
+a {
+  text-decoration: none;
+  position: relative;
+}
+
+a::after {
+  position: absolute;
+  content: "";
+  height: 0.125rem;
+  width: 100%;
+  background-color: var(--color-text);
+  bottom: 0;
+  left: 0;
+  border-radius: 5px;
+
+  transform-origin: right;
+  
+  transition: transform 0.25s ease-in-out;
+}
+
+a.noBar::after {
+  display: none;
+}
+
+a:not(.noAnim)::after {
+  transform: scaleX(0);
+}
+
+a:not(.noAnim):hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+*:is(h3, h2) > a::after {
+  background-color: var(--color-heading);
 }
 
 /* Heading */
@@ -180,7 +223,7 @@ ol {
   margin-right: var(--spacing-0);
   padding: var(--spacing-0);
   margin-bottom: var(--spacing-8);
-  list-style-position: outside;
+  list-style-position: inside;
   list-style-image: none;
 }
 
@@ -329,6 +372,52 @@ header > .main-heading {
 
 .gatsby-highlight {
   margin-bottom: var(--spacing-8);
+}
+
+form label {
+  display: block;
+  /* flex-direction: column; */
+
+  font-family: var(--fontFamily-sans);
+  font-weight: 500;
+  font-size: 1.1em;
+}
+
+form label *:is(input, textarea)  {
+  background-color: rgba(255,255,255,0);
+  outline: none;
+  height: 90%;
+  color: var(--color-text);
+  width: 100%;
+
+  border: 0.1em solid;
+  border-radius: 7px;
+  padding: 0 1rem;
+}
+
+form label input {
+  height: 3rem;
+}
+
+form label textarea {
+  padding-top: 0.7em;
+}
+
+form button {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--color-accent);
+  padding: 0.5em 1.5em;
+  font-size: 1.25em;
+  font-family: var(--fontFamily-sans);
+  position: relative;
+
+  transition: background-color 0.15s ease-in-out;
+}
+
+form button:hover{
+  background-color:#ea7d7d;
 }
 
 /* Media queries */

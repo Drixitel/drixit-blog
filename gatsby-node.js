@@ -6,6 +6,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Define a template for blog post
   const blogPost = path.resolve(`./src/templates/blog-post.js`);
+  const tagPosts = path.resolve(`./src/templates/tag-posts.js`);
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(
@@ -15,10 +16,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           sort: { fields: [frontmatter___date], order: ASC }
           limit: 1000
         ) {
+          tags: group(field: frontmatter___tags) {
+            fieldValue
+            totalCount
+          }
           nodes {
             id
             fields {
               slug
+            }
+            frontmatter {
+              private
             }
           }
         }
@@ -35,24 +43,47 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const posts = result.data.allMarkdownRemark.nodes;
+  const tags = result.data.allMarkdownRemark.tags;
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
   // `context` is available in the template as a prop and as a variable in GraphQL
 
+  const getNextPost = posts => {
+    for (let post of posts) {
+      if (post.frontmatter.private) continue;
+
+      return post.id;
+    }
+    return null;
+  };
+
   if (posts.length > 0) {
-    posts.forEach((post, index) => {
-      const previousPostId = index === 0 ? null : posts[index - 1].id;
+    posts.forEach((post, index, arr) => {
+      const previousPostId =
+        index === 0 ? null : getNextPost([...arr.slice(0, index)].reverse());
       const nextPostId =
-        index === posts.length - 1 ? null : posts[index + 1].id;
+        index > arr.length - 1 ? null : getNextPost(arr.slice(index + 1));
 
       createPage({
-        path: post.fields.slug,
+        path: `/posts${post.fields.slug}`,
         component: blogPost,
         context: {
           id: post.id,
           previousPostId,
           nextPostId,
+        },
+      });
+    });
+  }
+
+  if (tags.length > 0) {
+    tags.forEach(tag => {
+      createPage({
+        path: `/posts/tags/${tag.fieldValue}/`,
+        component: tagPosts,
+        context: {
+          tag: tag.fieldValue,
         },
       });
     });

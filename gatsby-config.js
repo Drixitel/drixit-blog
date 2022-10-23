@@ -32,9 +32,17 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: "gatsby-remark-highlight-code",
+            options: {
+              theme: "panda",
+              lineNumbers: true,
+              editable: true,
+            },
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 630,
+              maxWidth: 1024,
             },
           },
           {
@@ -118,5 +126,6 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    "gatsby-plugin-glslify",
   ],
 };
