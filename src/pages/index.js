@@ -87,6 +87,12 @@ const BlogIndex = ({ data, location }) => {
               );
             })}
           </div>
+
+          <h6>
+            <Link to="/posts" className="noAnim">
+              check out the rest
+            </Link>
+          </h6>
         </section>
 
         <section
@@ -110,6 +116,7 @@ const BlogIndex = ({ data, location }) => {
             <h1 style={{ margin: "0 0 1em" }}>Let's Talk!</h1>
 
             <form name="contact" method="POST" data-netlify="true">
+              <input type="hidden" name="form-name" value="contact" />
               <p>
                 <label>
                   Name:

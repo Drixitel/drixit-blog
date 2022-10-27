@@ -29,7 +29,7 @@ const TagPostsTemplate = ({ pageContext, data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <h1 style={{ textTransform: "capitalize" }}>{tag} Posts</h1>
+      <h1 style={{ textTransform: "capitalize" }}>Posts about {tag}</h1>
       <div
         className="filterWrapper"
         style={{

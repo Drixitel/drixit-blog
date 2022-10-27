@@ -139,7 +139,7 @@ a:not(.noAnim):hover::after {
   transform-origin: left;
 }
 
-*:is(h3, h2) > a::after {
+*:is(h3, h2, h5, h6) > a::after {
   background-color: var(--color-heading);
 }
 
@@ -384,14 +384,16 @@ form label {
 }
 
 form label *:is(input, textarea)  {
-  background-color: rgba(255,255,255,0);
+  margin-top: 0.35em;
+  display: block;
+  background-color: #453434;
   outline: none;
+  border: none;
   height: 90%;
   color: var(--color-text);
   width: 100%;
 
-  border: 0.1em solid;
-  border-radius: 7px;
+  border-radius: 0.25em;
   padding: 0 1rem;
 }
 
