@@ -23,15 +23,51 @@ Oh, and here's a great quote from this Wikipedia on
 
 ![Chinese Salty Egg](./salty_egg.jpg)
 
+Link to a [PDF File](./example.pdf)
+
+```md
+Link to a [PDF File](./example.pdf)
+```
+
+Write LaTeX expressions inline:
+
+$a^2 + b^2 = c^2$
+
+```latex
+Write LaTeX expressions inline:
+
+$a^2 + b^2 = c^2$
+```
+
+And in display mode:
+
+$$
+\begin{aligned}
+&(n-1)(n-1)\\\
+&=n^2-2n+1
+\end{aligned}
+$$
+
+```latex
+And in display mode:
+
+$$
+\begin{aligned}
+&(n-1)(n-1)\\\
+&=n^2-2n+1
+\end{aligned}
+$$
+```
+
 You can also write code blocks here!
 
 ```js
 const saltyDuckEgg = "chinese preserved food product";
 ```
 
-Try highlighting lines 10-12 in code blocks:
+Try highlighting lines 9-12 in code blocks:
 
-```py{10-12}
+```py{9-12}
 def print_nums(nums):
     for num in nums:
         print(num)

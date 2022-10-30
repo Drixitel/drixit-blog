@@ -13,13 +13,14 @@ const vert = glsl`
   varying vec3 vColor;
 
   #pragma glslify: snoise = require(glsl-noise/simplex/3d);
+  #pragma glslify: cnoise = require(glsl-noise/classic/3d);
 
   void main() {
     vec3 pos = position;
 
-    vec2 st = uv * vec2(4.0, 6.0);
+    vec2 st = uv * vec2(4.0, 6.0 - uTime * 0.25);
 
-    float noise = snoise(vec3(st + uTime * 0.1, uTime * 0.025));
+    float noise = snoise(vec3(st, uTime * 0.025));
 
     // add concavity to wrap around cam, displace plane
     float incline = abs(uv.x - 0.5) * 2.0;
@@ -30,14 +31,18 @@ const vert = glsl`
     vec4 modelPos = modelMatrix * vec4(pos, 1.0);
 
     // calculate color
-    st = uv * vec2(0.5, 0.75);
-    float colorNoise = abs(snoise(vec3(st, uTime * 0.015))) * 5.0;
+    st = uv * vec2(0.75, 1.0);
+    float colorNoise = abs(cnoise(vec3(st * 2.0, uTime * 0.015))) * 4.;
     vec3 color = uColor[0];
 
     color = mix(color, uColor[1], S(0.0, 1.0, colorNoise));
-    color = mix(color, uColor[2], S(0.1, 2.0, colorNoise));
+    color = mix(color, uColor[2], S(1.0, 2.0, colorNoise));
     color = mix(color, uColor[3], S(2.0, 3.0, colorNoise));
     color = mix(color, uColor[4], S(3.0, 4.0, colorNoise));
+
+    if (colorNoise > 4.0) {
+      color = vec3(0.0);
+    }
 
     gl_Position = projectionMatrix * viewMatrix * modelPos;
     vColor = color;
@@ -75,7 +80,7 @@ const Waves = () => {
   const camera = useThree(s => s.camera);
 
   useFrame(({ clock }) => {
-    ref.current.material.uTime = clock.elapsedTime;
+    ref.current.material.uTime = clock.elapsedTime + 100.0;
   });
 
   return (
@@ -100,8 +105,8 @@ const Scene = () => {
       }}
       camera={{
         fov: 30,
-        position: [0.07769, 1.15757, 3.16454],
-        rotation: [-0.35067, 0.02305, 0.00843],
+        position: [0.07769, 1.25757, 3.16454],
+        rotation: [-0.55067, 0.02305, 0.00843],
       }}
     >
       <Waves />

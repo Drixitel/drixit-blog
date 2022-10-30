@@ -1,6 +1,14 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import Scene from "./scene";
+import "katex/dist/katex.min.css";
+
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
+import { useMemo } from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import { useCallback } from "react";
+deckDeckGoHighlightElement();
 
 const NAVS = [
   ["Posts", "/posts"],
@@ -31,13 +39,20 @@ const Layout = ({ location, title, children }) => {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        marginBottom: "1.125rem",
+        marginBottom: "2.125rem",
         width: "100%",
         ...style,
       }}
     >
-      <h1 className="main-heading">
-        <Link to="/">{title}</Link>
+      <h1 className="main-heading desktop">
+        <Link to="/" className="noBar">
+          {title}
+        </Link>
+      </h1>
+      <h1 className="main-heading mobile">
+        <Link to="/" className="noBar">
+          MPM
+        </Link>
       </h1>
 
       <nav style={{ display: "flex", gap: "3em" }}>

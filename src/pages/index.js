@@ -44,7 +44,7 @@ const BlogIndex = ({ data, location }) => {
                 >
                   <div className="head">
                     <h3 style={{ margin: "1.5rem 0 0.5rem 0" }}>
-                      <Link to={post.fields.slug}>{title}</Link>
+                      <Link to={`/posts${post.fields.slug}`}>{title}</Link>
                     </h3>
                     <p
                       style={{
@@ -115,8 +115,8 @@ const BlogIndex = ({ data, location }) => {
           <div className="wrapper">
             <h1 style={{ margin: "0 0 1em" }}>Let's Talk!</h1>
 
-            <form name="contact" method="POST" data-netlify="true">
-              <input type="hidden" name="form-name" value="contact" />
+            <form name="Contact Form" method="POST" data-netlify="true">
+              <input type="hidden" name="form-name" value="Contact Form" />
               <p>
                 <label>
                   Name:

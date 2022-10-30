@@ -39,18 +39,18 @@ const BlogPostTemplate = ({
                 zIndex: -3,
               }}
             />
-            {headerImage && (
+            <div
+              className="shade"
+              style={{
+                position: "absolute",
+                inset: 0,
+                background:
+                  "linear-gradient(0deg, rgba(34,28,28,1) 0%, rgba(34,28,28,0) 75%)",
+                zIndex: -1,
+              }}
+            />
+            {headerImage ? (
               <>
-                <div
-                  className="shade"
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    background:
-                      "linear-gradient(0deg, rgba(34,28,28,1) 0%, rgba(34,28,28,0) 50%, rgba(34,28,28,0) 100%)",
-                    zIndex: -1,
-                  }}
-                />
                 <GatsbyImage
                   image={headerImage}
                   style={{
@@ -62,7 +62,7 @@ const BlogPostTemplate = ({
                   alt="header"
                 />
               </>
-            )}
+            ) : null}
             <div
               className="text"
               style={{ marginTop: "auto", marginLeft: "1rem" }}
@@ -93,14 +93,14 @@ const BlogPostTemplate = ({
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
+              <Link to={`/posts${previous.fields.slug}`} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
+              <Link to={`/posts${next.fields.slug}`} rel="next">
                 {next.frontmatter.title} →
               </Link>
             )}

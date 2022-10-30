@@ -10,19 +10,17 @@ const About = ({ data, location }) => {
   const size = 5;
 
   const h1Styles = {
-    fontSize: `${size}rem`,
-    lineHeight: 1,
+    fontSize: `clamp(2rem, 2rem + 1.25vw, ${size}rem)`,
     margin: 0,
   };
 
   const h3Styles = {
-    fontSize: `${size / 1.5}rem`,
+    fontSize: `clamp(1.7rem, 1.75rem + 1.5vw, ${size / 1.5}rem)`,
     fontFamily: "var(--fontFamily-serif",
     margin: "0 0 0.25ch",
     color: "var(--color-bg)",
     backgroundColor: "var(--color-text-light)",
     padding: "0.25ch 0.25ch 0.1ch",
-    lineHeight: 1,
   };
 
   return (

@@ -126,15 +126,15 @@ a::after {
   transition: transform 0.25s ease-in-out;
 }
 
-a.noBar::after {
+a.noBar::after, .gatsby-resp-image-wrapper a::after {
   display: none;
 }
 
-a:not(.noAnim)::after {
+nav a::after {
   transform: scaleX(0);
 }
 
-a:not(.noAnim):hover::after {
+nav a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
@@ -422,6 +422,14 @@ form button:hover{
   background-color:#ea7d7d;
 }
 
+header h1.mobile {
+  display: none;
+}
+
+header h1.desktop {
+  display: block;
+}
+
 /* Media queries */
 
 @media (max-width: 42rem) {
@@ -438,5 +446,14 @@ form button:hover{
 @media (min-width: 64rem) {
   :root {
     --maxWidth-wrapper: var(--maxWidth-4xl);
+  }
+}
+
+@media (max-width: 500px) {
+  header h1.mobile {
+    display: block;
+  }
+  header h1.desktop {
+    display: none;
   }
 }
