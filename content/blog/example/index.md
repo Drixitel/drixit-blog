@@ -1,6 +1,6 @@
 ---
 title: Example Post
-date: "2015-05-01T22:12:03.284Z"
+date: "2015-05-01"
 description: "Contains examples of most of the blog's markdown functionality"
 tags: ["physics", "math"]
 private: true
