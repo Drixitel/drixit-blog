@@ -11,7 +11,7 @@ const StatusPage = () => {
           src="https://api.netlify.com/api/v1/badges/51528303-0ebb-4a66-91f6-8cd001f5b929/deploy-status"
         />
       </p>
-      <a href="https://app.netlify.com/sites/drixit-blog/deploys">
+      <a href="https://app.netlify.com/sites/gleeful-khapse-41949b/deploys?filter=main">
         see deploys
       </a>
     </section>
