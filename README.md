@@ -2,7 +2,7 @@
 
 ## Site Status:
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/51528303-0ebb-4a66-91f6-8cd001f5b929/deploy-status)](https://app.netlify.com/sites/drixit-blog/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/51528303-0ebb-4a66-91f6-8cd001f5b929/deploy-status)](https://app.netlify.com/sites/gleeful-khapse-41949b/deploys?filter=main)
 
 ## How to develop
 
