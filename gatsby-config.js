@@ -3,7 +3,7 @@ module.exports = {
     title: `Michelle: The Website`,
     author: {
       name: `Michelle Pichardo-Munoz`,
-      summary: `the prettiest lady in the world.`,
+      summary: `.`,
     },
     description: `A place for Michelle to put stuff and things.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
