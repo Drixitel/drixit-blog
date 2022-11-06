@@ -9,7 +9,16 @@
 - clone the repository to any directory
   - `git clone https://github.com/JMBeresford/drixit-blog.git`
 - run `npm install` to install the project dependencies
-  - make sure you have `npm` and `nodejs` installed if you encounter errors
+
+  - make sure you have `npm` and `nodejs 16.x` installed if you encounter errors
+
+    - on ubuntu/debian:
+
+      ```
+      curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+      sudo apt update && sudo apt install nodejs
+      ```
+
 - run `npm run dev` to start up the development server
   - once running, you can go to `localhost:8000` in your browser to see the
     live project
