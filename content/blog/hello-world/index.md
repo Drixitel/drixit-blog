@@ -1,16 +1,29 @@
 ---
 title: Hello World
-date: "2015-05-01T22:12:03.284Z"
+date: "2022-11-11"
 description: "Hello World"
-tags: ["physics", "math", "windows", "abc", "jeff", "samuel"]
+tags: ["poem"]
 headerImage: ./header-img1.jpg
 ---
 
-This is my first post on my new fake blog! How exciting! Dolla Dolla Bill yall
+> --My favorite quote-- \
+> How doth the little crocodile \
+> Improve his shining tail, \
+> And pour the waters of the Nile \
+> On every golden scale! \
+> \
+> How cheerfully he seems to grin, \
+> How neatly be spreads his claws, \
+> And welcomes little fishes in, \
+> With gently smiling jaws!
+>
+> -- Lewis Carroll
+
+This is my first post on my new fake blog!
 
 I'm sure I'll write a lot more interesting things in the future.
 
-Oh, and here's a great quote from this Wikipedia on
+<!-- Oh, and here's a great quote from this Wikipedia on
 [salted duck eggs](https://en.wikipedia.org/wiki/Salted_duck_egg).
 
 > A salted duck egg is a Chinese preserved food product made by soaking duck
@@ -21,9 +34,9 @@ Oh, and here's a great quote from this Wikipedia on
 > salted duck eggs have a briny aroma, a gelatin-like egg white and a
 > firm-textured, round yolk that is bright orange-red in color.
 
-![Chinese Salty Egg](./salty_egg.jpg)
+![Chinese Salty Egg](./salty_egg.jpg) -->
 
-You can also write code blocks here!
+<!-- You can also write code blocks here!
 
 ```js
 const saltyDuckEgg = "chinese preserved food product";
@@ -46,9 +59,9 @@ while input > 0:
         nums.append(_input)
 
 print_nums(_nums)
-```
+``` -->
 
-| Number | Title                                    | Year |
+<!-- | Number | Title                                    | Year |
 | :----- | :--------------------------------------- | ---: |
 | 1      | Harry Potter and the Philosopher’s Stone | 2001 |
 | 2      | Harry Potter and the Chamber of Secrets  | 2002 |
@@ -80,16 +93,16 @@ This is a paragraph.
 
 ##### Header 5
 
-###### Header 6
-
+###### Header 6 -->
+<!--
     # Header 1
     ## Header 2
     ### Header 3
     #### Header 4
     ##### Header 5
-    ###### Header 6
+    ###### Header 6 -->
 
-# Header 1
+<!-- # Header 1
 
 ## Header 2
 
@@ -99,37 +112,37 @@ This is a paragraph.
 
 ##### Header 5
 
-###### Header 6
-
+###### Header 6 -->
+<!--
     # Header 1 #
     ## Header 2 ##
     ### Header 3 ###
     #### Header 4 ####
     ##### Header 5 #####
-    ###### Header 6 ######
+    ###### Header 6 ###### -->
 
-> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+<!-- > Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
 
-    > Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+    > Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. -->
 
-> ## This is a header.
+<!-- > ## This is a header.
 >
 > 1. This is the first list item.
 > 2. This is the second list item.
 >
 > Here's some example code:
 >
->     Markdown.generate();
-
+>     Markdown.generate(); -->
+<!--
     > ## This is a header.
     > 1. This is the first list item.
     > 2. This is the second list item.
     >
     > Here's some example code:
     >
-    >     Markdown.generate();
+    >     Markdown.generate(); -->
 
-- Red
+<!-- - Red
 - Green
 - Blue
 
@@ -139,8 +152,8 @@ This is a paragraph.
 
 - Red
 - Green
-- Blue
-
+- Blue -->
+<!--
 ```markdown
 - Red
 - Green
@@ -153,9 +166,9 @@ This is a paragraph.
 - Red
 - Green
 - Blue
-```
+``` -->
 
-- `code goes` here in this line
+<!-- - `code goes` here in this line
 - **bold** goes here
 
 ```markdown
@@ -171,27 +184,27 @@ This is a paragraph.
 1. Buy flour and salt
 1. Mix together with water
 1. Bake
-```
+``` -->
 
-1. `code goes` here in this line
+<!-- 1. `code goes` here in this line
 1. **bold** goes here
 
 ```markdown
 1. `code goes` here in this line
 1. **bold** goes here
-```
-
+``` -->
+<!--
 Paragraph:
 
-    Code
+    Code -->
 
 <!-- -->
-
+<!--
     Paragraph:
 
-        Code
+        Code -->
 
----
+<!-- ---
 
 ---
 
@@ -209,9 +222,9 @@ Paragraph:
 
     - - -
 
-    ---------------------------------------
+    --------------------------------------- -->
 
-This is [an example](http://example.com "Example") link.
+<!-- This is [an example](http://example.com "Example") link.
 
 [This link](http://example.com) has no title attr.
 
@@ -225,9 +238,9 @@ This is [an example][id] reference-style link.
 
     This is [an example] [id] reference-style link.
 
-    [id]: http://example.com "Optional Title"
+    [id]: http://example.com "Optional Title" -->
 
-_single asterisks_
+<!-- _single asterisks_
 
 _single underscores_
 
@@ -249,4 +262,4 @@ This paragraph has some `code` in it.
 
 ![Alt Text](https://via.placeholder.com/200x50 "Image Title")
 
-    ![Alt Text](https://via.placeholder.com/200x50 "Image Title")
+    ![Alt Text](https://via.placeholder.com/200x50 "Image Title") -->
