@@ -98,4 +98,4 @@ $$
 f(x) = \frac{1}{2} + \sum\limits_{k = 0}^{<\infty}\frac{2}{\pi(2k+1)}sin((2k+1)x)
 $$
 
-For more information on the indexing and a visualization visit my [Desmos](https://www.desmos.com/calculator/ribtoic0e8)!
+For more information on the indexing and a visualization visit my [Desmos](https://www.desmos.com/calculator/obdb5ahmfd)!
