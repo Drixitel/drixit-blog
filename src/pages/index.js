@@ -44,7 +44,12 @@ const BlogIndex = ({ data, location }) => {
                 >
                   <div className="head">
                     <h3 style={{ margin: "1.5rem 0 0.5rem 0" }}>
-                      <Link to={`/posts${post.fields.slug}`}>{title}</Link>
+                      <Link
+                        className="underline noBar"
+                        to={`/posts${post.fields.slug}`}
+                      >
+                        {title}
+                      </Link>
                     </h3>
                     <p
                       style={{
@@ -89,7 +94,7 @@ const BlogIndex = ({ data, location }) => {
           </div>
 
           <h6>
-            <Link to="/posts" className="noAnim">
+            <Link to="/posts" className="underline noBar">
               check out the rest
             </Link>
           </h6>

@@ -36,7 +36,6 @@ const TagPostsTemplate = ({ pageContext, data, location }) => {
           display: "flex",
           alignItems: "center",
           gap: "1rem",
-          border: "2px solid",
           height: "3rem",
           borderRadius: "10px",
           padding: "0 1rem",
@@ -45,14 +44,6 @@ const TagPostsTemplate = ({ pageContext, data, location }) => {
         <FiSearch />
         <input
           type="text"
-          style={{
-            backgroundColor: "rgba(255,255,255,0)",
-            outline: "none",
-            border: "none",
-            height: "90%",
-            color: "var(--color-text)",
-            width: "100%",
-          }}
           placeholder="Search"
           value={textFilter}
           onChange={handleInput}

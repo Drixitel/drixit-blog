@@ -107,8 +107,19 @@ hr {
 }
 
 a {
-  text-decoration: none;
   position: relative;
+}
+
+a.underline {
+  transition: color 0.15s ease-in-out;
+}
+
+a.underline:hover {
+  color: white;
+}
+
+a:not(.underline) {
+  text-decoration: none;
 }
 
 a::after {
@@ -193,17 +204,13 @@ h6 {
   font-size: var(--fontSize-1);
 }
 
-h1 > a {
-  color: inherit;
-  text-decoration: none;
-}
 
+h1 > a,
 h2 > a,
 h3 > a,
 h4 > a,
 h5 > a,
 h6 > a {
-  text-decoration: none;
   color: inherit;
 }
 
@@ -281,11 +288,6 @@ table thead tr th {
 
 a {
   color: var(--color-text);
-}
-
-a:hover,
-a:focus {
-  text-decoration: none;
 }
 
 /* Custom classes */
@@ -372,6 +374,49 @@ header > .main-heading {
 
 .gatsby-highlight {
   margin-bottom: var(--spacing-8);
+}
+
+.noPostsFound {
+  display: grid;
+  width: 100%;
+  place-items: center;
+}
+
+.noPostsFound .text {
+  display: flex;
+  margin: 3em 0;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.noPostsFound .text * {
+  color: #594343;
+  margin: 0 0 1em;
+}
+
+.filterWrapper {
+  margin-top: 0.35em;
+  display: block;
+  background-color: #453434;
+  outline: none;
+  border: none;
+  height: 90%;
+  color: var(--color-text);
+  width: 100%;
+
+  border-radius: 0.25em;
+  padding: 0 1rem;
+}
+
+.filterWrapper input {
+  background-color: rgba(255,255,255,0);
+  border: none;
+  outline: none;
+  display: block;
+  color: var(--color-text);
+  width: 100%;
 }
 
 form label {

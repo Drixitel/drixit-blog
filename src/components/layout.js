@@ -1,13 +1,10 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import Scene from "./scene";
+import { gsap, Power0 } from "gsap";
 import "katex/dist/katex.min.css";
 
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
-import { useMemo } from "react";
-import { useState } from "react";
-import { useEffect } from "react";
-import { useCallback } from "react";
 deckDeckGoHighlightElement();
 
 const NAVS = [
@@ -15,9 +12,45 @@ const NAVS = [
   ["About Me", "/about"],
 ];
 
+const DESCRIPTORS = [
+  "math",
+  "physics",
+  "cat",
+  "smol",
+  "carne asada fries",
+  "desmos",
+  "spanish punk music",
+  "hat",
+];
+
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;
+
+  const tl = React.useRef(gsap.timeline({ repeat: -1, repeatDelay: 3 }));
+  const descRef = React.useRef();
+  const [descIdx, setDescIdx] = React.useState(0);
+
+  React.useEffect(() => {
+    tl.current.clear();
+
+    tl.current
+      .to(".descriptor", {
+        opacity: 0,
+        y: 100,
+        duration: 0.5,
+        ease: Power0.easeInOut,
+        onComplete: () => {
+          setDescIdx(prev => (prev + 1) % DESCRIPTORS.length);
+        },
+      })
+      .to(".descriptor", {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: Power0.easeInOut,
+      });
+  }, []);
 
   const NavItem = ({ text, url }) => (
     <Link
@@ -87,24 +120,11 @@ const Layout = ({ location, title, children }) => {
             justifyContent: "left",
             gridTemplateColumns: "1fr auto 1fr",
             gridTemplateRows: "auto 1fr",
-            background:
-              "linear-gradient(0deg, rgba(34,28,28,1) 0%, rgba(34,28,28,0) 100%)",
           }}
         >
-          {/* <div
-            className="canvas"
-            style={{
-              gridArea: "1 / 1 / 3 / 4",
-              zIndex: -1,
-              backgroundColor: "#333",
-              width: "100%",
-              height: "100%",
-            }}
-          ></div> */}
-          <Scene />
           <Header
             className="global-wrapper"
-            style={{ gridRow: "1/2", gridColumn: "1/4", zIndex: 1 }}
+            style={{ gridRow: "1/2", gridColumn: "1/4", zIndex: 2 }}
           />
 
           <div
@@ -114,15 +134,45 @@ const Layout = ({ location, title, children }) => {
               gridRow: "2/3",
               gridColumn: "1/4",
               width: "100%",
+              zIndex: 2,
             }}
           >
-            <h1>Hi, I'm Michelle! 👋</h1>
+            <h1 style={{ fontSize: "3.25rem" }}>Hi, I'm Michelle! 👋</h1>
 
-            <p>
-              I'm a pretty lady, who is currently studying Applied Physics and
-              Mathematics at UCSC.
-            </p>
+            <div className="wrapper">
+              <h3
+                style={{
+                  color: "var(--color-text)",
+                  display: "inline",
+                  margin: 0,
+                }}
+              >
+                I am a{" "}
+              </h3>
+              <h3
+                className="descriptor"
+                ref={descRef}
+                style={{
+                  color: "var(--color-primary)",
+                  display: "inline",
+                }}
+              >
+                {DESCRIPTORS[descIdx]}
+              </h3>
+              <h3
+                className="descriptor"
+                style={{
+                  color: "var(--color-primary)",
+                  display: "inline",
+                }}
+              >
+                {" "}
+                person.
+              </h3>
+            </div>
           </div>
+
+          <Scene />
         </div>
         <div
           className="spacer"
