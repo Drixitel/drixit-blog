@@ -8,7 +8,7 @@ private: false
 
 # Fourier Representations
 
-> This page is under contruction; several small errors are present\*
+> This page is under contruction; several small errors are present\* but check this out --> [Desmos](https://www.desmos.com/calculator/obdb5ahmfd)
 
 ---
 
