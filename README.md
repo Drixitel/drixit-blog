@@ -19,7 +19,7 @@
       sudo apt update && sudo apt install nodejs
       ```
 
-- run `npm run dev` to start up the development server
+- run command `npm run dev` to start up the development server
   - once running, you can go to `localhost:8000` in your browser to see the
     live project
   - while running, the dev server will auto-reload the project in your
