@@ -8,14 +8,14 @@ headerImage: ./header-img1.jpg
 
 > --My favorite quote-- \
 > How doth the little crocodile \
-> Improve his shining tail, \
+> &nbsp;&nbsp;Improve his shining tail, \
 > And pour the waters of the Nile \
-> On every golden scale! \
+> &nbsp;&nbsp;On every golden scale! \
 > \
 > How cheerfully he seems to grin, \
-> How neatly be spreads his claws, \
+> &nbsp;&nbsp;How neatly spreads his claws, \
 > And welcomes little fishes in, \
-> With gently smiling jaws!
+> &nbsp;&nbsp;With gently smiling jaws!
 >
 > -- Lewis Carroll
 
