@@ -8,6 +8,8 @@ private: false
 
 # Fourier Representations
 
+> This page is under contruction; several small errors are present\*
+
 ---
 
 Heaviside Function's Fourier Representation
