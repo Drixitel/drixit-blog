@@ -8,7 +8,7 @@ private: false
 
 # Fourier Representations
 
-> This page is under contruction; but check this out --> [Desmos](https://www.desmos.com/calculator/obdb5ahmfd)
+> This page is under contruction; but check this out --> [Desmos](https://www.desmos.com/calculator/mdtszxxhg4)
 
 ---
 
@@ -100,4 +100,4 @@ $$
 f(x) = \frac{1}{2} + \sum\limits_{k = 0}^{<\infty}\frac{2}{\pi(2k+1)}sin((2k+1)x)
 $$
 
-For more information on the indexing and a visualization visit my [Desmos](https://www.desmos.com/calculator/obdb5ahmfd)!
+For more information on the indexing and a visualization visit my [Desmos](https://www.desmos.com/calculator/mdtszxxhg4)!
