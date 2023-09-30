@@ -30,6 +30,8 @@
     - an exception to this is when `gatsby` files are edited -- this
       requires a full reload to be realized in browser
 - when you are satisfied with your changes, `git commit -a && git push` to push your changes up and this will trigger a new build on netlify
+  - `esc` to save comment 
+  - `:wq` to write/close/commit changes
 
 ## How to add content
 
