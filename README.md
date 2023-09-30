@@ -4,6 +4,9 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/51528303-0ebb-4a66-91f6-8cd001f5b929/deploy-status)](https://app.netlify.com/sites/gleeful-khapse-41949b/deploys?filter=main)
 
+## Issues
+- See GitHub Issues before losing time in Google
+
 ## How to develop
 
 - clone the repository to any directory
@@ -19,7 +22,7 @@
       sudo apt update && sudo apt install nodejs
       ```
 
-- run command `npm run dev` to start up the development server
+- run command `npm run dev` in package.json directory or subdirectory to start up the development server
   - once running, you can go to `localhost:8000` in your browser to see the
     live project
   - while running, the dev server will auto-reload the project in your
