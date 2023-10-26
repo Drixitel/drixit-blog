@@ -13,14 +13,19 @@ const NAVS = [
 ];
 
 const DESCRIPTORS = [
-  "math",
-  "physics",
-  "cat",
-  "smol",
+  "multivariate calculus",
+  "LOR audio book",
+  "speg the all knowing",
   "carne asada fries",
   "desmos",
   "spanish punk music",
-  "hat",
+  "hats",
+  "It's just algebra",
+  "my cats Ada and Gauss",
+  "my friends",
+  "the master equations",
+  "candied apples", 
+  "measuring time takes time"
 ];
 
 const Layout = ({ location, title, children }) => {
@@ -147,7 +152,7 @@ const Layout = ({ location, title, children }) => {
                   margin: 0,
                 }}
               >
-                I am a{" "}
+                Lives in my head :{" "}
               </h3>
               <h3
                 className="descriptor"
@@ -167,7 +172,7 @@ const Layout = ({ location, title, children }) => {
                 }}
               >
                 {" "}
-                person.
+                
               </h3>
             </div>
           </div>
