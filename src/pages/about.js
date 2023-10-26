@@ -49,22 +49,30 @@ const About = ({ data, location }) => {
             >
               <h3 style={{ ...h3Styles }}>All About</h3>
             </div>
-            <h1 style={{ gridColumn: "1/3", ...h1Styles }}>Pichardo-Munoz</h1>
+            <h1 style={{ gridColumn: "1/3", ...h1Styles }}>Pichardo Munoz</h1>
           </div>
         </section>
 
         <div className="section" style={{ maxWidth: "50ch" }}>
-          <h1>Lorem Ipsum</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt facere
-            ipsa quis soluta aliquid quibusdam adipisci doloremque quaerat, illo
-            numquam tempora debitis hic enim possimus, dolores repellendus
-            incidunt consequuntur vel accusantium magni velit voluptatibus!
-            Consequuntur perspiciatis ipsum impedit quo, obcaecati quae
-            cupiditate quod porro deserunt, error magnam aspernatur architecto.
-            Autem recusandae enim corporis, debitis soluta saepe optio amet sed
-            quasi!
+          <h1>Hi hello!</h1>
+          <p>This is my place to put things and stuff that interest me
+          Welcome! 
           </p>
+          <h1>Sensors!?</h1>
+          <p>
+          I'm an aspiring experimental physicist with an interest in 
+          sensor design. I'm currently developing software for an 
+          exciting radiation sensor the Intense Radiation 
+          Integrating Sensor (IRIS) with Dr. David Smith and his team.
+           My ultimate goal is to become a professional on sensor 
+           development and testing. </p>
+          <p>
+          These days, I tinker with electronics, write code, or
+           run simulations. When I need a break, you can find 
+           me on a low stakes hike, sketching out flowers, or training 
+           my cats Ada and Gauss. 
+          </p>
+        
         </div>
       </Layout>
     </>
