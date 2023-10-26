@@ -15,4 +15,5 @@
     - I don't like that it grabs the text and mashes it together like this
     - I would prefer it retain some of the variation i.e. title vs normal txt 
     - Or maybe it tries to show an image? or show the description? 
+    - OR: what if the image I have as the header is in the background of the post? 
 ![blog](blogshort.png)
