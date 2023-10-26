@@ -3,7 +3,7 @@ title: Fourier Analysis the Early Steps
 date: "2022-11-11"
 description: "Contains info on Fourier series"
 tags: ["Fourier", "math", "Desmos", "series"]
-private: false
+private: true
 ---
 
 # Fourier Representations

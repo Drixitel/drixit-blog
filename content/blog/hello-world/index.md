@@ -4,6 +4,7 @@ date: "2022-11-11"
 description: "Hello World"
 tags: ["poem"]
 headerImage: ./header-img1.jpg
+private: true
 ---
 
 > --My favorite quote-- \
