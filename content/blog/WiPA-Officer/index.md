@@ -1,7 +1,7 @@
 ---
 title: UCSC's WiPA Officer
 date: "2023-10-25"
-description: "My contributions to UCSC's Women in Physics and Astrophysics (WiPA) club as a Tech and Chats Officer  "
+description: "My contributions to UCSC's Women in Physics and Astrophysics (WiPA) group as a Tech and Chats Officer  "
 tags: ["WiPA", "Clubs", "Notion", "Websites"]
 headerImage: "Notion.png"
 private: false
