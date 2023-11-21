@@ -9,9 +9,8 @@ import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Michelle Pichardo`;
   const posts = data.allMarkdownRemark.nodes;
-  const carouselRef = React.useRef(null);
-
-  const [category, setCategory] = React.useState("portfolio");
+  const carouselRef1 = React.useRef(null);
+  const carouselRef2 = React.useRef(null);
 
   const portfolioPosts = React.useMemo(
     () =>
@@ -30,13 +29,8 @@ const BlogIndex = ({ data, location }) => {
     [posts]
   );
 
-  const filteredPosts = React.useMemo(
-    () => (category === "portfolio" ? portfolioPosts : oddsPosts),
-    [category, portfolioPosts, oddsPosts]
-  );
-
-  function scrollCarousel(direction) {
-    const carousel = carouselRef.current;
+  function scrollCarousel(direction, carousel) {
+    carousel = carousel;
     if (!carousel) return;
 
     const scrollAmount = carousel.offsetWidth / 2;
@@ -48,34 +42,52 @@ const BlogIndex = ({ data, location }) => {
       <Layout location={location} title={siteTitle}>
         <section className="top3">
           <div className="thin-wrapper top3-categories">
-            <h1
-              className={category === "portfolio" ? "active" : ""}
-              onClick={() => setCategory("portfolio")}
-            >
-              Portfolio Updates
-            </h1>
-            <h1
-              className={category === "odds" ? "active" : ""}
-              onClick={() => setCategory("odds")}
-            >
-              Odds and ends
-            </h1>
+            <h1>Portfolio Updates</h1>
           </div>
 
           <div className="wrapper">
-            <div className="button left" onClick={() => scrollCarousel("left")}>
+            <div
+              className="button left"
+              onClick={() => scrollCarousel("left", carouselRef1.current)}
+            >
               <FaChevronCircleLeft />
             </div>
-            <div ref={carouselRef} className="carousel">
+            <div ref={carouselRef1} className="carousel">
               <div className="cards">
-                {[...repeatArrayContent(filteredPosts, 5)].map((post, idx) => (
+                {portfolioPosts.map((post, idx) => (
                   <Card key={idx} post={post} />
                 ))}
               </div>
             </div>
             <div
               className="button right"
-              onClick={() => scrollCarousel("right")}
+              onClick={() => scrollCarousel("right", carouselRef1.current)}
+            >
+              <FaChevronCircleRight />
+            </div>
+          </div>
+
+          <div className="thin-wrapper top3-categories">
+            <h1>Odds and ends</h1>
+          </div>
+
+          <div className="wrapper">
+            <div
+              className="button left"
+              onClick={() => scrollCarousel("left", carouselRef2.current)}
+            >
+              <FaChevronCircleLeft />
+            </div>
+            <div ref={carouselRef2} className="carousel">
+              <div className="cards">
+                {oddsPosts.map((post, idx) => (
+                  <Card key={idx} post={post} />
+                ))}
+              </div>
+            </div>
+            <div
+              className="button right"
+              onClick={() => scrollCarousel("right", carouselRef2.current)}
             >
               <FaChevronCircleRight />
             </div>
