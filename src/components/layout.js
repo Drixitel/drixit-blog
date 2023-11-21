@@ -24,8 +24,8 @@ const DESCRIPTORS = [
   "my cats Ada and Gauss",
   "my friends",
   "the master equations",
-  "candied apples", 
-  "measuring time takes time"
+  "candied apples",
+  "measuring time takes time",
 ];
 
 const Layout = ({ location, title, children }) => {
@@ -42,7 +42,7 @@ const Layout = ({ location, title, children }) => {
     tl.current
       .to(".descriptor", {
         opacity: 0,
-        y: 100,
+
         duration: 0.5,
         ease: Power0.easeInOut,
         onComplete: () => {
@@ -51,7 +51,7 @@ const Layout = ({ location, title, children }) => {
       })
       .to(".descriptor", {
         opacity: 1,
-        y: 0,
+
         duration: 0.5,
         ease: Power0.easeInOut,
       });
@@ -102,7 +102,7 @@ const Layout = ({ location, title, children }) => {
   );
 
   const Footer = () => (
-    <footer style={{ marginTop: "2em" }}>
+    <footer style={{ marginTop: "2em" }} className="thin-wrapper">
       © {new Date().getFullYear()}, Built by
       {` `}
       <a href="https://www.john-beresford.com" className="noAnim">
@@ -117,8 +117,7 @@ const Layout = ({ location, title, children }) => {
         <div
           className="canvasWrapper"
           style={{
-            height: "80vh",
-            maxHeight: "800px",
+            height: "min(80svh, 800px)",
             width: "100vw",
             position: "absolute",
             display: "grid",
@@ -128,12 +127,12 @@ const Layout = ({ location, title, children }) => {
           }}
         >
           <Header
-            className="global-wrapper"
+            className="global-wrapper thin-wrapper"
             style={{ gridRow: "1/2", gridColumn: "1/4", zIndex: 2 }}
           />
 
           <div
-            className="content global-wrapper"
+            className="content global-wrapper thin-wrapper"
             style={{
               alignSelf: "end",
               gridRow: "2/3",
@@ -159,20 +158,11 @@ const Layout = ({ location, title, children }) => {
                 ref={descRef}
                 style={{
                   color: "var(--color-primary)",
-                  display: "inline",
+                  margin: 0,
+                  height: 0,
                 }}
               >
                 {DESCRIPTORS[descIdx]}
-              </h3>
-              <h3
-                className="descriptor"
-                style={{
-                  color: "var(--color-primary)",
-                  display: "inline",
-                }}
-              >
-                {" "}
-                
               </h3>
             </div>
           </div>
@@ -182,8 +172,7 @@ const Layout = ({ location, title, children }) => {
         <div
           className="spacer"
           style={{
-            height: "80vh",
-            maxHeight: "800px",
+            height: "min(80svh, 800px)",
             pointerEvents: "none",
             touchAction: "none",
           }}
@@ -197,8 +186,10 @@ const Layout = ({ location, title, children }) => {
 
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <Header />
-      <main>{children}</main>
+      <div className="thin-wrapper">
+        <Header />
+        <main>{children}</main>
+      </div>
       <Footer />
     </div>
   );

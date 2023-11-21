@@ -3,101 +3,91 @@ import { Link, graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import Tag from "../components/tag";
+import Card from "../components/card";
+import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`;
+  const siteTitle = data.site.siteMetadata?.title || `Michelle Pichardo`;
   const posts = data.allMarkdownRemark.nodes;
+  const carouselRef = React.useRef(null);
+
+  const [category, setCategory] = React.useState("portfolio");
+
+  const portfolioPosts = React.useMemo(
+    () =>
+      posts.filter(post =>
+        post.frontmatter.tags.map(t => t.toLowerCase()).includes("portfolio")
+      ),
+    [posts]
+  );
+
+  const oddsPosts = React.useMemo(
+    () =>
+      posts.filter(
+        post =>
+          !post.frontmatter.tags.map(t => t.toLowerCase()).includes("portfolio")
+      ),
+    [posts]
+  );
+
+  const filteredPosts = React.useMemo(
+    () => (category === "portfolio" ? portfolioPosts : oddsPosts),
+    [category, portfolioPosts, oddsPosts]
+  );
+
+  function scrollCarousel(direction) {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const scrollAmount = carousel.offsetWidth / 2;
+    carousel.scrollLeft += direction === "left" ? -scrollAmount : scrollAmount;
+  }
 
   return (
     <>
       <Layout location={location} title={siteTitle}>
         <section className="top3">
-          <h1>Check out my latest posts!</h1>
-
-          <div
-            className="cards"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(275px, 1fr))",
-              alignItems: "stretch",
-              justifyContent: "space-between",
-              gap: "0.75rem",
-            }}
-          >
-            {posts.slice(0, 3).map((post, idx) => {
-              const { title, date, tags } = post.frontmatter;
-              return (
-                <div
-                  key={idx}
-                  className="card"
-                  style={{
-                    position: "relative",
-                    backgroundColor: "rgb(43 35 35)",
-                    padding: "0 1.125rem",
-                    borderRadius: "10px",
-                    display: "grid",
-                    height: "350px",
-                    gridTemplateRows: "auto 1fr auto",
-                    gridTemplateColumns: "100%",
-                  }}
-                >
-                  <div className="head">
-                    <h3 style={{ margin: "1.5rem 0 0.5rem 0" }}>
-                      <Link
-                        className="underline noBar"
-                        to={`/posts${post.fields.slug}`}
-                      >
-                        {title}
-                      </Link>
-                    </h3>
-                    <p
-                      style={{
-                        margin: 0,
-                        color: "var(--color-text-light)",
-                        fontSize: "var(--fontSize-0)",
-                      }}
-                    >
-                      {date}
-                    </p>
-                    {/* <hr
-                      className="monochrome"
-                      style={{
-                        background: "var(--color-text-light)",
-                        width: "100%",
-                      }}
-                    /> */}
-                  </div>
-                  <p style={{ overflowY: "auto", zIndex: 2, marginTop: "1em" }}>
-                    {post.excerpt}
-                  </p>
-
-                  <div
-                    className="tags"
-                    style={{
-                      display: "flex",
-                      alignItems: "flex-end",
-                      flexWrap: "wrap",
-                      gap: "0.35rem",
-                      marginBottom: "0.75rem",
-                      maxWidth: "100%",
-                      zIndex: 2,
-                    }}
-                  >
-                    {tags.map((tag, idx) => (
-                      <Tag key={idx} tagName={tag} />
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
+          <div className="thin-wrapper top3-categories">
+            <h1
+              className={category === "portfolio" ? "active" : ""}
+              onClick={() => setCategory("portfolio")}
+            >
+              Portfolio Updates
+            </h1>
+            <h1
+              className={category === "odds" ? "active" : ""}
+              onClick={() => setCategory("odds")}
+            >
+              Odds and ends
+            </h1>
           </div>
 
-          <h6>
-            <Link to="/posts" className="underline noBar">
-              check out the rest
-            </Link>
-          </h6>
+          <div className="wrapper">
+            <div className="button left" onClick={() => scrollCarousel("left")}>
+              <FaChevronCircleLeft />
+            </div>
+            <div ref={carouselRef} className="carousel">
+              <div className="cards">
+                {[...repeatArrayContent(filteredPosts, 5)].map((post, idx) => (
+                  <Card key={idx} post={post} />
+                ))}
+              </div>
+            </div>
+            <div
+              className="button right"
+              onClick={() => scrollCarousel("right")}
+            >
+              <FaChevronCircleRight />
+            </div>
+          </div>
+
+          <div className="thin-wrapper">
+            <h6>
+              <Link to="/posts" className="underline noBar">
+                check out the rest
+              </Link>
+            </h6>
+          </div>
         </section>
 
         <section
@@ -117,7 +107,7 @@ const BlogIndex = ({ data, location }) => {
             }}
           />
 
-          <div className="wrapper">
+          <div className="wrapper thin-wrapper">
             <h1 style={{ margin: "0 0 1em" }}>Let's Talk!</h1>
 
             <form name="Contact Form" method="POST" data-netlify="true">
@@ -155,7 +145,7 @@ export default BlogIndex;
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="All posts" />;
+export const Head = () => <Seo title="Michelle Pichardo" />;
 
 export const pageQuery = graphql`
   query {
@@ -169,7 +159,7 @@ export const pageQuery = graphql`
       filter: { frontmatter: { private: { ne: true } } }
     ) {
       nodes {
-        excerpt
+        excerpt(pruneLength: 250)
         fields {
           slug
         }
@@ -178,8 +168,21 @@ export const pageQuery = graphql`
           title
           description
           tags
+          headerImage {
+            childImageSharp {
+              gatsbyImageData(width: 2048, placeholder: BLURRED)
+            }
+          }
         }
       }
     }
   }
 `;
+
+function repeatArrayContent(arr, times) {
+  const newArr = [];
+  for (let i = 0; i < times; i++) {
+    newArr.push(...arr);
+  }
+  return newArr;
+}
