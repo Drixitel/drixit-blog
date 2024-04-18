@@ -6,7 +6,10 @@ export default function Page() {
   return (
     <Paper>
       <div className="relative mb-8 py-12 rounded overflow-hidden text-center">
-        <WavesView className="absolute inset-0 z-[-1]" />
+
+            <div className="absolute inset-0 outline rounded-lg outline-secondary outline-[1000px]">
+        <WavesView className="absolute inset-px z-[-1]" />
+        </div>
         <h1 className="text-8xl font-black text-black mix-blend-overlay uppercase">
           Resume
         </h1>

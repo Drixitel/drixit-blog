@@ -32,12 +32,12 @@ export function CatSprite() {
     <SpriteAnimator
       ref={ref}
       renderOrder={2}
-      position={[-size.width / 2 - 40, -size.height / 2 + 25, -1]}
+      position-y={-size.height / 2 + 25}
       scale={100}
       alphaTest={0.01}
       frameName="walk"
       spriteDataset={spriteObj}
-      fps={12}
+      fps={15}
       autoPlay
       loop
     />
@@ -47,7 +47,10 @@ export function CatSprite() {
 export function CatView(props: ComponentProps<typeof View>) {
   const { children, className, ...rest } = props;
 
-  const classes = cn("overflow-hidden", className);
+  const classes = cn(
+    "overflow-hidden pointer-events-none touch-none",
+    className
+  );
 
   return (
     <View {...rest} className={classes} frames={1}>

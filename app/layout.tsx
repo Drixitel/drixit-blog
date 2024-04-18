@@ -8,8 +8,7 @@ import { Inter_Tight as FontSans } from "next/font/google";
 import { Playfair_Display as FontSerif } from "next/font/google";
 import { MainHeader } from "@/components/main-header";
 import { MainFooter } from "@/components/main-footer";
-import Scene, { SceneView } from "@/components/scene";
-import { CatSprite, CatView } from "@/components/cat-sprite";
+import { Content } from "./content";
 
 const fontMono = FontMono({
   subsets: ["latin"],
@@ -46,11 +45,7 @@ export default function RootLayout({
       <body className={cn("min-h-screen bg-background antialiased")}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <MainHeader />
-          <div id="main-content" className="relative pb-16">
-            <Scene className="absolute inset-0" />
-            <CatView className="absolute inset-0" />
-            {children}
-          </div>
+          <Content>{children}</Content>
           <MainFooter />
         </ThemeProvider>
       </body>
