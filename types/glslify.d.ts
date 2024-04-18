@@ -1,5 +1,3 @@
-import { ReactNode } from "react";
-
 declare module "glslify" {
   const fn: (src: TemplateStringsArray) => string;
   export default fn;

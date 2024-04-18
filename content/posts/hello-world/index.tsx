@@ -1,6 +1,6 @@
 import Markdown from "./markdown.mdx";
 import headerImage from "./header-img1.jpg";
-import { Post } from "../metadata";
+import { Post } from "..";
 
 export function Render() {
   return <Markdown />;

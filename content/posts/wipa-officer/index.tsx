@@ -1,4 +1,4 @@
-import { Post } from "../metadata";
+import { Post } from "..";
 import Markdown from "./markdown.mdx";
 import headerImage from "./Notion.png";
 

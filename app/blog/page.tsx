@@ -3,6 +3,7 @@ import { FilteredPostsProvider, Filters } from "./filter";
 import { Grid } from "./grid";
 import { posts } from "@/content/posts";
 import { Separator } from "@/components/ui/separator";
+import { Suspense } from "react";
 
 export default async function Page() {
   return (
@@ -12,7 +13,9 @@ export default async function Page() {
       </h1>
 
       <FilteredPostsProvider posts={posts}>
-        <Filters posts={posts} />
+        <Suspense fallback={null}>
+          <Filters posts={posts} />
+        </Suspense>
 
         <Separator className="mb-4" />
 

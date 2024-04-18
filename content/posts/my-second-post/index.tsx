@@ -1,4 +1,4 @@
-import { Post } from "@/posts/metadata";
+import { Post } from "..";
 import Markdown from "./markdown.mdx";
 
 export function Render() {
