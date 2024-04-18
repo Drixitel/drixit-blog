@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Drixit Blog
 
-## Getting Started
+There are READMEs in each directory with more information about the role of each directory.
 
-First, run the development server:
+### Directories
+
+- `app/` - The 'router' of the application. This is where the routes are defined. Each folder that contains a `page.ts(x)` file is a page in the application.
+  - e.g. `app/about/page.tsx` will be rendered at `/about`
+  - e.g. `app/page.tsx` will be rendered at `/`
+  - e.g. `app/blog/[id]/page.tsx` will be rendered at `/blog/{id}` for any `id` written in the URL
+  - read more at the [next.js routing docs](https://nextjs.org/docs/app/building-your-application/routing)
+- `components/` - Reusable components that are used throughout the application.
+- `lib/` - Utility functions that are used throughout the application, usually relating to outside resources/packages.
+- `content/` - Index of contents -- like markdown files -- that are used to generate various pages/page content.
+
+Most anything else is essentially utilities/configuration that will not be directly interacted with.
+
+### Development
+
+> Ensure you have `pnpm` installed:
+> [installation instructions](https://pnpm.io/installation#using-a-standalone-script)
+
+To start the development server, run:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will start the development server, note the terminal output for what url to find the app at.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This project is set up to be deployed to [Vercel](https://vercel.com).
 
-## Learn More
+- When you push to the `main` branch, Vercel will automatically deploy the changes.
+- When you push to a branch, Vercel will create a preview deployment of the changes so you (and anyone else) can review them before merging.
 
-To learn more about Next.js, take a look at the following resources:
+### Notable Tools Used
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Next.js](https://nextjs.org/) - React framework used to build the application.
+- [Tailwind CSS](https://tailwindcss.com/) - CSS framework used to style the application.
+  - [shadcn/ui](https://ui.shadcn.com/) - Tailwind CSS component library used to assist in building the application.

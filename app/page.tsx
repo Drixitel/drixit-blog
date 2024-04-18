@@ -11,7 +11,7 @@ export default function Home() {
         <section className="relative mb-16">
           <div className="container relative mb-8 overflow-hidden">
             <div className="absolute inset-0 outline rounded-lg outline-secondary outline-[1000px]">
-              <WavesView className="absolute inset-0" />
+              <WavesView className="absolute inset-px" />
             </div>
             <NameLg />
           </div>
