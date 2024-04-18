@@ -1,0 +1,64 @@
+.post {
+  article {
+    p {
+      @apply mb-2;
+
+      &::after {
+        content: "";
+        @apply clear-left block;
+      }
+    }
+
+    blockquote {
+      @apply border-l-2 border-accent-foreground italic pl-4 py-2;
+    }
+
+    a {
+      @apply text-accent-foreground underline underline-offset-2;
+    }
+
+    h1 {
+      @apply text-6xl font-bold mb-4;
+    }
+
+    h2 {
+      @apply text-4xl font-bold mb-3;
+    }
+
+    h3 {
+      @apply text-2xl font-bold mb-2;
+    }
+
+    h4 {
+      @apply text-xl font-bold mb-2;
+    }
+
+    h5 {
+      @apply text-lg font-bold mb-2;
+    }
+
+    h6 {
+      @apply text-base font-bold mb-2;
+    }
+
+    pre {
+      @apply my-4;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    hr,
+    [data-orientation="horizontal"] {
+      @apply block;
+    }
+
+    hr,
+    [data-orientation="horizontal"] {
+      @apply my-4;
+    }
+  }
+}
