@@ -53,8 +53,8 @@ export default function Page() {
               </Link>
             ))}
 
-            <div className="flex flex-col gap-1 pt-3">
-              <h5>If you&apos;re clever, you can find my email address!</h5>
+            <div className="flex flex-col pt-3">
+              <h5>My email:</h5>
 
               <Code lang="sh" lineNumbers={false}>
                 {"echo esjyjufm@hnbjm.dpn | tr '[b-{]' '[a-z]'"}
