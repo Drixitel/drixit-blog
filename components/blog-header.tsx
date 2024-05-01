@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Post } from "@/content/posts";
 import Image from "next/image";
-import Scene from "./scene";
+import Scene, { Waves } from "./scene";
 
 type Props = { post: Post } & JSX.IntrinsicElements["header"];
 
@@ -34,7 +34,9 @@ export function BlogHeader(props: Props) {
         {headerImage ? (
           <Image alt="" className={imageClasses} src={headerImage} />
         ) : (
-          <Scene className="absolute inset-0 z-[-1]" />
+          <Scene className="absolute inset-0 z-[-1]">
+            <Waves />
+          </Scene>
         )}
       </div>
     </header>

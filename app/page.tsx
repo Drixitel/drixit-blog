@@ -1,4 +1,4 @@
-import { WavesView } from "@/components/scene";
+import Scene, { Waves, WavesView } from "@/components/scene";
 import { NameLg } from "../components/name";
 import { Descriptors } from "@/components/descriptors";
 import { RecentPosts } from "./recent-posts";
@@ -9,10 +9,10 @@ export default function Home() {
     <main className="container">
       <Paper>
         <section className="relative mb-16">
-          <div className="container relative mb-8 overflow-hidden">
-            <div className="absolute inset-0 outline rounded-lg outline-secondary outline-[1000px]">
-              <WavesView className="absolute inset-px" />
-            </div>
+          <div className="container relative mb-8">
+            <Scene className="absolute inset-0 rounded-lg overflow-hidden">
+              <Waves />
+            </Scene>
             <NameLg />
           </div>
 
