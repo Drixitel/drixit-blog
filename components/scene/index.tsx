@@ -4,12 +4,12 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { ACESFilmicToneMapping, BufferGeometry, Mesh } from "three";
 import React, { ComponentProps, useEffect, useRef } from "react";
 import { WavesMaterial, WavesMaterialProps } from "./shader";
-import { OrbitControls, View } from "@react-three/drei";
+import { View } from "@react-three/drei";
 import { cn } from "@/lib/utils";
 
 const resolution: [number, number] = [250, 250];
 
-const Waves = () => {
+export const Waves = () => {
   const ref = useRef<Mesh<BufferGeometry, WavesMaterialProps>>(null);
   const camera = useThree((s) => s.camera);
 

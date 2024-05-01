@@ -109,12 +109,12 @@ export function Filters(props: Props) {
 
   return (
     <div className={cn(className, "mb-8 flex items-center")} {...rest}>
-      <div className="border rounded-md flex items-center py-3 px-2 gap-2 w-80">
+      <div className="border rounded-md flex items-center py-3 px-2 gap-2 w-80 focus-within:ring-accent focus-within:ring-2">
         <Search className="h-4 w-4 text-muted-foreground" />
         <Input
           type="search"
           placeholder="Search posts..."
-          className="border-none py-0 px-0 h-full bg-secondary text-secondary-foreground"
+          className="border-none py-0 px-0 h-full bg-secondary text-secondary-foreground focus-visible:ring-transparent"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />

@@ -4,6 +4,7 @@ import { Grid } from "./grid";
 import { posts } from "@/content/posts";
 import { Separator } from "@/components/ui/separator";
 import { Suspense } from "react";
+import Scene from "@/components/scene";
 
 export default async function Page() {
   return (
@@ -20,6 +21,7 @@ export default async function Page() {
         <Separator className="mb-4" />
 
         <div className="relative border border-secondary">
+          <Scene className="absolute inset-0 pointer-events-none touch-none" />
           <Grid />
         </div>
       </FilteredPostsProvider>
