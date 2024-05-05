@@ -88,16 +88,18 @@ export default function Certificate(props: Props) {
         />
       </Environment>
 
-      <Text
-        characters={props.name}
-        fontSize={0.35}
-        fontWeight={"bold"}
-        anchorX="left"
-        position={[-2, 0.35, -0.08]}
-      >
-        {props.name.toUpperCase()}
-        <meshStandardMaterial color={"gold"} metalness={1} roughness={0.15} />
-      </Text>
+      <Suspense fallback={null}>
+        <Text
+          // characters={props.name}
+          fontSize={0.35}
+          fontWeight={"bold"}
+          anchorX="left"
+          position={[-2, 0.35, -0.08]}
+        >
+          {props.name.toUpperCase()}
+          <meshStandardMaterial color={"gold"} metalness={1} roughness={0.15} />
+        </Text>
+      </Suspense>
 
       <CertificatePaper rotation-x={Math.PI / 2} />
 
