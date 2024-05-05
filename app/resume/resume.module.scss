@@ -1,0 +1,27 @@
+.resume {
+  @apply container;
+
+  h2 {
+    @apply text-5xl font-bold;
+  }
+
+  h3 {
+    @apply text-xl font-medium;
+  }
+
+  h4 {
+    @apply text-muted-foreground font-medium;
+  }
+
+  p {
+    @apply mt-1 text-secondary-foreground/85;
+  }
+
+  a {
+    @apply underline underline-offset-2;
+  }
+
+  section {
+    @apply my-8;
+  }
+}

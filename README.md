@@ -1,68 +1,43 @@
 # Drixit Blog
 
-## Site Status:
+There are READMEs in each directory with more information about the role of each directory.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/51528303-0ebb-4a66-91f6-8cd001f5b929/deploy-status)](https://app.netlify.com/sites/gleeful-khapse-41949b/deploys?filter=main)
+### Directories
 
-## Issues
-- See GitHub Issues before losing time in Google
+- `app/` - The 'router' of the application. This is where the routes are defined. Each folder that contains a `page.ts(x)` file is a page in the application.
+  - e.g. `app/about/page.tsx` will be rendered at `/about`
+  - e.g. `app/page.tsx` will be rendered at `/`
+  - e.g. `app/blog/[id]/page.tsx` will be rendered at `/blog/{id}` for any `id` written in the URL
+  - read more at the [next.js routing docs](https://nextjs.org/docs/app/building-your-application/routing)
+- `components/` - Reusable components that are used throughout the application.
+- `lib/` - Utility functions that are used throughout the application, usually relating to outside resources/packages.
+- `content/` - Index of contents -- like markdown files -- that are used to generate various pages/page content.
 
-## How to develop
+Most anything else is essentially utilities/configuration that will not be directly interacted with.
 
-- clone the repository to any directory
-  - `git clone https://github.com/JMBeresford/drixit-blog.git`
-- run `npm install` to install the project dependencies
+### Development
 
-  - make sure you have `npm` and `nodejs 16.x` installed if you encounter errors
+> Ensure you have `pnpm` installed:
+> [installation instructions](https://pnpm.io/installation#using-a-standalone-script)
 
-    - on ubuntu/debian:
+To start the development server, run:
 
-      ```
-      curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-      sudo apt update && sudo apt install nodejs
-      ```
+```bash
+pnpm install
+pnpm dev
+```
 
-- run command `npm run dev` in package.json directory or subdirectory to start up the development server
-  - once running, you can go to `localhost:8000` in your browser to see the
-    live project
-  - while running, the dev server will auto-reload the project in your
-    browser when the code is edited
-    - an exception to this is when `gatsby` files are edited -- this
-      requires a full reload to be realized in browser
-- when you are satisfied with your changes, `git commit -a && git push` to push your changes up and this will trigger a new build on netlify
-  - `esc` to save comment 
-  - `:wq` to write/close/commit changes
+This will start the development server, note the terminal output for what url to find the app at.
 
-## How to add content
+### Deployment
 
-- any sub-directory in `content/blog` constitutes a blog post
-  - e.g. the existence of `content/blog/hello-world` means that there will be
-    a post at the link: `http://drixit-blog.com/posts/hello-world`
-- so to create a new post, simply create a new sub-directory `content/blog/<title>`
-- each post is generated from a markdown file `index.md` within that posts'
-  directory
-  - e.g. `content/blog/hello-world/index.md` will define the content found at
-    `http://drixit-blog.com/posts/hello-world`
-- this markdown file uses standard markdown functionality when rendered on the web,
-  but it also has additional functionality beyond that of normal markdown
-  - visit the `example` page (e.g. `localhost:8000/posts/example` when on the dev
-    server) to see examples of all of the functionality
-- in addition, metadata for the post is defined in the **frontmatter** at the top
-  of the markdown file
+This project is set up to be deployed to [Vercel](https://vercel.com).
 
-  - the frontmatter looks like the following, and has the listed possible options:
+- When you push to the `main` branch, Vercel will automatically deploy the changes.
+- When you push to a branch, Vercel will create a preview deployment of the changes so you (and anyone else) can review them before merging.
 
-    ```yaml
-    ---
-    title: Hello World
-    date: "2015-05-21T22:12:03.284Z"
-    description: "Hello World"
-    tags: ["physics", "math", "linux"]
-    headerImage: ./header-img1.jpg
-    private: false
-    ---
-    ```
+### Notable Tools Used
 
-  - note that private posts do not show up in the lists on the website, i.e
-    you need to manually enter their url to get to them
-  - also note that the date can be a simple `"YYYY-MM-DD"`
+- [Next.js](https://nextjs.org/) - React framework used to build the application.
+- [Tailwind CSS](https://tailwindcss.com/) - CSS framework used to style the application.
+  - [shadcn/ui](https://ui.shadcn.com/) - Tailwind CSS component library used to assist in building the application.

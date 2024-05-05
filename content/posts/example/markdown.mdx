@@ -1,0 +1,161 @@
+---
+title: Example Post
+date: "2015-05-01"
+description: "Contains examples of most of the blog's markdown functionality"
+tags: ["physics", "math"]
+private: true
+---
+
+# Markdown works here too
+
+Markdown can be written an `.mdx` file and used as content
+within these pages. This content is coming from the `markdown.mdx`
+file in the example blog post directiry.
+
+Examine that file to see how the following content is written.
+
+## What can markdown do here?
+
+### Write HTML/JSX directly
+
+<h5>HTML works here</h5>
+
+import OtherMarkdown from "./baby-markdown.mdx";
+import { Descriptors } from "@/components/descriptors";
+
+The content with the red border is coming from other files, and
+are referenced in the MDX file using JSX.
+
+<div className='py-4 border border-red-500'>
+  We can import JSX components from other files and use them here:
+
+<div className="py-4 bg-muted">
+  <Descriptors />
+</div>
+
+We can even import other markdown files and use them here:
+
+  <div className='py-4 bg-muted'>
+    <OtherMarkdown />
+  </div>
+</div>
+
+### Write LaTeX expressions inline:
+
+$a^2 + b^2 = c^2$
+
+And in display mode:
+
+$$
+\begin{aligned}
+&(n-1)(n-1)\\\
+&=n^2-2n+1
+\end{aligned}
+$$
+
+### You can write code blocks here
+
+```index.js
+// this is a JavaScript code block
+const saltyDuckEgg = "chinese preserved food product";
+```
+
+Try highlighting lines 9-12 in code blocks:
+
+```main.py
+# focus(9:12)
+def print_nums(nums):
+    for num in nums:
+        print(num)
+
+_nums = []
+
+_input = 1
+
+while input > 0:
+    _input = input("Enter a non-negative number. Enter a negative to quit: ")
+    if _input > 0:
+        nums.append(_input)
+
+print_nums(_nums)
+```
+
+### You can write tables here
+
+| Number | Title                                    | Year |
+| :----- | :--------------------------------------- | ---: |
+| 1      | Harry Potter and the Philosopher’s Stone | 2001 |
+| 2      | Harry Potter and the Chamber of Secrets  | 2002 |
+| 3      | Harry Potter and the Prisoner of Azkaban | 2004 |
+
+### Various typography options are available
+
+This is a paragraph.
+
+# Header 1
+
+## Header 2
+
+### Header 3
+
+#### Header 4
+
+##### Header 5
+
+###### Header 6
+
+### This is a blockquote
+
+> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+
+### These are lists
+
+- Red
+- Green
+- Blue
+
+* Red
+* Green
+* Blue
+
+- Red
+- Green
+- Blue
+
+- `code goes` here in this line
+- **bold** goes here
+
+1. Buy flour and salt
+1. Mix together with water
+1. Bake
+
+1. `code goes` here in this line
+1. **bold** goes here
+
+### You can write horizontal rules/separator lines
+
+---
+
+### You can write links
+
+This is [an example](http://example.com "Example") link.
+
+[This link](http://example.com) has no title attr.
+
+This is [an example][id] reference-style link.
+
+[id]: http://example.com "Optional Title"
+
+### You can write emphasis and strong text
+
+_single asterisks_
+
+_single underscores_
+
+**double asterisks**
+
+**double underscores**
+
+This paragraph has some `code` in it.
+
+![Alt Text](https://via.placeholder.com/200x50 "Image Title")
