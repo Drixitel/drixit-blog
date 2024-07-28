@@ -50,9 +50,9 @@ export function ContactForm() {
             render={({ field }) => (
               <FormFieldRenderer
                 name="name"
-                label="Your Name"
-                placeholder="Neville Longbottom"
-                description="What should I call you?"
+                label="Name"
+                placeholder="Gandalf the Grey"
+                // description="What should I call you?"
                 field={field}
                 kind="input"
               />
@@ -64,9 +64,9 @@ export function ContactForm() {
             render={({ field }) => (
               <FormFieldRenderer
                 name="email"
-                label="Your Email"
-                placeholder="nlongbottom2@hogwarts.edu"
-                description="How should I reach you?"
+                label="Email"
+                placeholder="shadowfax@maiar.edu"
+                // description="How should I reach you?"
                 field={field}
                 kind="input"
               />
@@ -80,7 +80,7 @@ export function ContactForm() {
                 name="message"
                 label="Message"
                 placeholder="Hey, I wanted to ask you about..."
-                description="What do you want to chat about?"
+                // description="What do you want to chat about?"
                 field={field}
                 kind="textarea"
               />
