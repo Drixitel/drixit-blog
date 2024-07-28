@@ -1,4 +1,4 @@
-import { DiscordIcon } from "./img/discord";
+// import { DiscordIcon } from "./img/discord";
 import { GithubIcon } from "./img/github";
 import { LinkedinIcon } from "./img/linkedin";
 
@@ -12,14 +12,14 @@ export type SocialMedia = {
 };
 
 export const socials: SocialMedia[] = [
-  {
-    name: "Discord",
-    username: "drixitel",
-    url: "https://discord.com/users/496553620993605643",
-    Icon: DiscordIcon,
-    blurb: "I am most active on Discord, feel free to add me!",
-    action: "reach out",
-  },
+  // {
+  //   name: "Discord",
+  //   username: "drixitel",
+  //   url: "https://discord.com/users/496553620993605643",
+  //   Icon: DiscordIcon,
+  //   blurb: "I am most active on Discord, feel free to add me!",
+  //   action: "reach out",
+  // },
   {
     name: "LinkedIn",
     username: "Michelle Pichardo",
