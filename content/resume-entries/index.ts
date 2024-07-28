@@ -1,6 +1,9 @@
 import { toSnakeCase } from "@/lib/utils";
-import { experience } from "./experience";
+import { about } from "./about";
 import { academics } from "./academics";
+import { experience } from "./experience";
+import { research } from "./research";
+import { teaching_leadership } from "./teaching_leadership";
 import { EntryDefault, SectionDefault } from "./default-renderers";
 
 // for rending a page for a single entry when that entry is clicked
@@ -57,7 +60,7 @@ export type Resume = {
 };
 
 export const resume = sanitizeResume({
-  sections: [experience, academics],
+  sections: [about, academics, experience, research, teaching_leadership],
 });
 
 type SanitizedResumeEntry = Omit<ResumeEntry, "RenderEntry"> & {
