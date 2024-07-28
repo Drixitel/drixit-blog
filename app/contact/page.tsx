@@ -54,7 +54,7 @@ export default function Page() {
             ))}
 
             <div className="flex flex-col pt-3">
-              <h5>My email:</h5>
+              <h5>Email:</h5>
 
               <Code lang="sh" lineNumbers={false}>
                 {"echo esjyjufm@hnbjm.dpn | tr '[b-{]' '[a-z]'"}
