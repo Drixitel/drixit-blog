@@ -41,17 +41,10 @@ function DescriptorList(props: JSX.IntrinsicElements["ul"]) {
 }
 
 const DESCRIPTORS = [
-  "multivariate calculus",
   "L.O.R. audio book",
   "speg, the all knowing",
-  "carne asada fries",
-  "desmos",
   "spanish punk music",
-  "hats",
-  "It's just algebra",
-  "my cats Ada and Gauss",
-  "my friends",
-  "the master equations",
-  "candied apples",
-  "measuring time takes time",
+  "'it's just algebra - Lee'",
+  "Ada & Gauss",
+  "the master equations but derived with vectors",
 ];
