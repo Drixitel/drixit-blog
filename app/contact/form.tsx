@@ -65,7 +65,7 @@ export function ContactForm() {
               <FormFieldRenderer
                 name="email"
                 label="Email"
-                placeholder="shadowfax@maiar.edu"
+                placeholder="youshallnotpass4@shire.org"
                 // description="How should I reach you?"
                 field={field}
                 kind="input"
@@ -79,7 +79,7 @@ export function ContactForm() {
               <FormFieldRenderer
                 name="message"
                 label="Message"
-                placeholder="Hey, I wanted to ask you about..."
+                placeholder="A wizard is never late, Frodo Baggins. Nor is he early; he arrives precisely when he means to."
                 // description="What do you want to chat about?"
                 field={field}
                 kind="textarea"
