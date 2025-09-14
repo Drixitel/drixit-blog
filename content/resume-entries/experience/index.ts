@@ -15,7 +15,7 @@ export const experience: ResumeSection = {
     {
       title: "Semiconductor Patent Examiner",
       location: "US Patent & Trademark Office",
-      date: "2024 - Present",
+      date: "2024 - 2025",
       description: "",
       tags: [],
     },
