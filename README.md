@@ -29,6 +29,10 @@ pnpm dev
 
 This will start the development server, note the terminal output for what url to find the app at.
 
+When you are satisfied with your changes, `git commit -a && git push` to push your changes up and this will trigger a new build on Vercel
+  - `esc` to save comment
+  - `:wq` to write/close/commit changes
+
 ### Deployment
 
 This project is set up to be deployed to [Vercel](https://vercel.com).
