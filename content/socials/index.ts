@@ -30,7 +30,7 @@ export const socials: SocialMedia[] = [
   },
   {
     name: "GitHub",
-    username: "drixitel",
+    username: "Drixitel",
     url: "https://github.com/Drixitel",
     Icon: GithubIcon,
     blurb: "Check out my projects on GitHub!",
