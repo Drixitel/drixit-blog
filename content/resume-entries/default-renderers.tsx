@@ -32,7 +32,7 @@ export function EntryDefault(props: ResumeEntryComponentProps) {
   return (
     <div className="w-full border-l bg-muted/50 border-primary px-3 pt-1 pb-2 rounded-r">
       <div className="flex justify-between items-baseline">
-        <EntryTitle title={title} link={link} />
+        <EntryTitle title={title} link={link} external={!!linkExternal} />
         <h4>{date}</h4>
       </div>
 
@@ -43,7 +43,11 @@ export function EntryDefault(props: ResumeEntryComponentProps) {
   );
 }
 
-export function EntryTitle(props: { title: string; link?: string }) {
+export function EntryTitle(props: {
+  title: string;
+  link?: string;
+  external?: boolean;
+}) {
   const { title, link } = props;
 
   function Header() {
@@ -51,7 +55,12 @@ export function EntryTitle(props: { title: string; link?: string }) {
   }
 
   return link ? (
-    <Link href={link} className="hover:text-accent transition-colors">
+    <Link
+      href={link}
+      className="hover:text-accent transition-colors"
+      target={props.external ? "_blank" : undefined} // Open in new tab if external
+      rel={props.external ? "noopener noreferrer" : undefined} // Security for external links
+    >
       <Header />
     </Link>
   ) : (
