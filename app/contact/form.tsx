@@ -31,7 +31,7 @@ export type FormSchema = z.infer<typeof formSchema>;
 
 export function ContactForm() {
   const form = useForm<FormSchema>({
-    mode: "onBlur",
+    mode: "onChange",
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
