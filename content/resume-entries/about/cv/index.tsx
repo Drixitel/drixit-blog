@@ -1,5 +1,6 @@
 import { EntryPageComponentProps } from "@/content/resume-entries";
 import Image from "next/image";
+import { PDFViewer } from "./pdfviewer";
 
 export function cv(props: EntryPageComponentProps) {
   const { entry } = props;
@@ -11,7 +12,10 @@ export function cv(props: EntryPageComponentProps) {
       {entry.location && <h4>{entry.location}</h4>}
 
       <p>{entry.description}</p>
-      {/* <Image src={sleepPic} alt="sleeping lady" width={500} height={500} /> */}
+      <PDFViewer />
+      <a href="/pichardoCV_2025.pdf" target="_blank" rel="noopener noreferrer">
+        Download CV
+      </a>
     </div>
   );
 }
