@@ -6,7 +6,7 @@ export function Content(props: { children: ReactNode }) {
   const container = useRef<HTMLDivElement>(null);
 
   return (
-    <div ref={container} id="main-content" className="relative pb-16">
+    <div ref={container} id="main-content" className="relative max-w-full pb-16">
       {props.children}
     </div>
   );

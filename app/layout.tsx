@@ -42,7 +42,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn(fontSerif.variable, fontMono.variable, fontSans.variable)}
     >
-      <body className={cn("min-h-screen bg-background antialiased")}>
+      <body className={cn("relative min-h-screen w-screen max-w-screen bg-background antialiased")}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <MainHeader />
           <Content>{children}</Content>
