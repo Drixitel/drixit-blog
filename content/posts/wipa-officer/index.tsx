@@ -11,6 +11,6 @@ export const metaData: Post = {
   description: "WiPA Officer",
   date: "2023-10-25",
   tags: ["wipa", "clubs", "notion", "websites", "portfolio"],
-  private: false,
+  private: true,
   headerImage,
 };

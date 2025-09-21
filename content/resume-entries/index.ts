@@ -3,6 +3,7 @@ import { about } from "./about";
 import { academics } from "./academics";
 import { experience } from "./experience";
 import { research } from "./research";
+import { selected_presentations } from "./selected_presentations";
 import { teaching_leadership } from "./teaching_leadership";
 import { EntryDefault, SectionDefault } from "./default-renderers";
 
@@ -60,7 +61,7 @@ export type Resume = {
 };
 
 export const resume = sanitizeResume({
-  sections: [about, academics, experience, research, teaching_leadership],
+  sections: [about, academics, experience, research, selected_presentations, teaching_leadership],
 });
 
 type SanitizedResumeEntry = Omit<ResumeEntry, "RenderEntry"> & {
