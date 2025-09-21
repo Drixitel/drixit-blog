@@ -6,7 +6,7 @@ import { Paper } from "@/components/paper";
 
 export default function Home() {
   return (
-    <main className="container">
+    <main className="container w-screen">
       <Paper>
         <section className="relative mb-16">
           <div className="container relative mb-8">
