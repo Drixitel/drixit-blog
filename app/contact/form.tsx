@@ -110,7 +110,7 @@ type FormFieldProps<T = undefined | keyof FormSchema> =
         name: T;
         label: string;
         placeholder?: string;
-        description: string;
+        description?: string;
         field: ControllerRenderProps<FormSchema, T>;
         kind: "input" | "textarea";
       }
