@@ -2,6 +2,24 @@ import { Cd, Code } from "@/components/code";
 import Markdown, { frontmatter } from "./markdown.mdx";
 import saltyEggImage from "./salty_egg.jpg";
 import { Post } from "..";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import Image from "next/image";
+import { CarouselImage } from "./carousel-image";
+
 
 const descriptionLong =
   "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat. Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.";
@@ -15,10 +33,41 @@ export const metaData: Post = {
   private: true,
 };
 
+
+
 export function Render() {
+  const images = [
+    saltyEggImage,
+    saltyEggImage,
+    saltyEggImage,
+    saltyEggImage,
+    saltyEggImage,
+  ];
   return (
     <main>
       <h1>This is an example post</h1>
+      <Card>
+        <CardHeader>
+          <CardTitle className="font-bold text-2xl uppercase leading-none tracking-wider">
+            Image Carousel Example
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Carousel>
+            <CarouselContent>
+              {images.map((image, i) => (
+                // <CarouselItem key={i} className="">
+                <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselImage src={image.src}></CarouselImage>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </CardContent>
+        <CardFooter></CardFooter>
+      </Card>
 
       <p>
         We can write whatever HTML content we want here using JSX syntax. JSX is
