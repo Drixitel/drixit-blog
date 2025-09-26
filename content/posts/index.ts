@@ -17,6 +17,7 @@ const postData: Post[] = [
   await import("./fourier-analysis").then((mod) => mod.metaData),
   await import("./wipa-officer").then((mod) => mod.metaData),
   await import("./hello-world").then((mod) => mod.metaData),
+  await import("./research").then((mod) => mod.metaData),
 
 ];
 
