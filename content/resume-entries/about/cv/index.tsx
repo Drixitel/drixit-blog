@@ -14,7 +14,7 @@ export function cv(props: EntryPageComponentProps) {
       <p>{entry.description}</p>
       <PDFViewer />
       <a href="/pichardoCV_2025.pdf" target="_blank" rel="noopener noreferrer">
-        Download CV
+        Download CV (PDF)
       </a>
     </div>
   );
