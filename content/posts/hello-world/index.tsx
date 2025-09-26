@@ -8,7 +8,7 @@ export function Render() {
 
 export const metaData: Post = {
   title: "Hello World",
-  description: "Hello World",
+  description: "Baby's first post",
   date: "2022-11-11",
   tags: ["poem"],
   headerImage,
