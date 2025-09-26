@@ -21,7 +21,7 @@ export const research: ResumeSection = {
     },
     {
       title: "Lead Research Intern",
-      date: "2018 - 2019",
+      date: "2019",
       location: "National Science Foundation (NSF) & College of the Desert",
       description: "Environmental Science Research",
       tags: [],
