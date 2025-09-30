@@ -38,7 +38,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { CarouselImage } from "./carousel-image";
+import { CarouselImage, CarouselSingleImage } from "./carousel-image";
 
 export const metaData: Post = {
   title: "Research",
@@ -84,7 +84,7 @@ export function Render() {
             <CarouselContent>
               {images1.map((image, i) => (
                 // <CarouselItem key={i} className="">
-                <CarouselItem key={i} className="basis-1/2">
+                <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/2">
                   <CarouselImage src={image.src}></CarouselImage>
                 </CarouselItem>
               ))}
@@ -159,8 +159,8 @@ export function Render() {
             <CarouselContent>
               {images2.map((image, i) => (
                 // <CarouselItem key={i} className="">
-                <CarouselItem key={i} className="md:basis-1/1 lg:basis-1/1">
-                  <CarouselImage src={image.src}></CarouselImage>
+                <CarouselItem key={i} >
+                  <CarouselSingleImage src={image.src}></CarouselSingleImage>
                 </CarouselItem>
               ))}
             </CarouselContent>
@@ -201,7 +201,7 @@ export function Render() {
       </Card>
 
       <p></p>
-      <h1 className="text-right"> 2018 </h1>
+      <h1 className="text-right"> 2018</h1>
       <hr className="my-4" />
 
       <Card>
@@ -216,7 +216,7 @@ export function Render() {
               {images5.map((image, i) => (
                 // <CarouselItem key={i} className="">
                 <CarouselItem key={i} className="md:basis-1/1 lg:basis-1/1">
-                  <CarouselImage src={image.src}></CarouselImage>
+                  <CarouselSingleImage src={image.src}></CarouselSingleImage>
                 </CarouselItem>
               ))}
             </CarouselContent>
@@ -232,6 +232,8 @@ export function Render() {
                 </CarouselItem>
               ))}
             </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
           </Carousel>
         </CardContent>
         <CardFooter className="flex flex-col items-start gap-4">
