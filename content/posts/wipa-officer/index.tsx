@@ -27,7 +27,7 @@ import { CarouselImage } from "./carousel-image";
 
 export const metaData: Post = {
   title: "WiPA Officer",
-  description: "WiPA Officer",
+  description: "Chat & Technology Officer",
   date: "2023-10-25",
   tags: ["wipa", "clubs", "notion", "websites", "portfolio"],
   private: false,
