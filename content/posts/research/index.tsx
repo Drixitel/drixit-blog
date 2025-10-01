@@ -23,6 +23,8 @@ import csusb_setup from "./images/4csusb/csusb_setup.png";
 import { PDFViewer, PDFViewer3, PDFViewer4 } from "./pdfviewer";
 import { PDFViewer2 } from "./pdfviewer";
 
+import { posts } from "@/content/posts";
+
 import {
   Carousel,
   CarouselContent,
@@ -39,6 +41,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { CarouselImage, CarouselSingleImage } from "./carousel-image";
+import { Button } from "@/components/ui/button";
+import { toSnakeCase } from "@/lib/utils";
+import Link from "next/link";
 
 export const metaData: Post = {
   title: "Research",
@@ -94,35 +99,52 @@ export function Render() {
           </Carousel>
         </CardContent>
         <CardFooter>
-          <ul className="list-disc list-inside">
+          <ul className="list-none list-inside">
             <li>
-              <a
-                href="https://github.com/IRIS-Digital-Dosimeter/IRIS-Project"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Github Repository
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://agu.confex.com/agu/fm23/meetingapp.cgi/Paper/1346450"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                The Motivation, Calibration, and Simulation of IRIS: Intense
-                Radiation Integration Sensor
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://agu.confex.com/agu/fm23/meetingapp.cgi/Paper/1435137"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                A Novel, Low-Cost Approach to Direct Measurement of Radiation
-                Dose Associated with Terrestrial Gamma Ray Flashes
-              </a>
+              <div className="flex gap-4">
+                <Button
+                  size="default"
+                  className="font-medium tracking-wide"
+                  variant="outline"
+                  asChild
+                >
+                  <a
+                    href="https://github.com/IRIS-Digital-Dosimeter/IRIS-Project"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Github Repository
+                  </a>
+                </Button>
+                <Button
+                  size="default"
+                  className="font-medium tracking-wide"
+                  variant="outline"
+                  asChild
+                >
+                  <a
+                    href="https://agu.confex.com/agu/fm23/meetingapp.cgi/Paper/1346450"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Paper 1
+                  </a>
+                </Button>
+                <Button
+                  size="default"
+                  className="font-medium tracking-wide"
+                  variant="outline"
+                  asChild
+                >
+                  <a
+                    href="https://agu.confex.com/agu/fm23/meetingapp.cgi/Paper/1435137"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Paper 2
+                  </a>
+                </Button>
+              </div>
             </li>
           </ul>
         </CardFooter>
@@ -159,7 +181,7 @@ export function Render() {
             <CarouselContent>
               {images2.map((image, i) => (
                 // <CarouselItem key={i} className="">
-                <CarouselItem key={i} >
+                <CarouselItem key={i}>
                   <CarouselSingleImage src={image.src}></CarouselSingleImage>
                 </CarouselItem>
               ))}
@@ -245,6 +267,12 @@ export function Render() {
             unintentionally destructive experiment.
             <p></p>
             <div className="w-full flex justify-center">
+              <Button
+                size="lg"
+                className="font-medium tracking-wide"
+                variant="outline"
+                asChild
+              >
               <a
                 href="/internshipPapers/csusb/CrestPoster2018.pdf"
                 target="_blank"
@@ -252,6 +280,7 @@ export function Render() {
               >
                 View Poster
               </a>
+              </Button>
             </div>
           </div>
           <PDFViewer />
