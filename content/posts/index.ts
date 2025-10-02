@@ -18,6 +18,7 @@ const postData: Post[] = [
   await import("./wipa-officer").then((mod) => mod.metaData),
   await import("./hello-world").then((mod) => mod.metaData),
   await import("./research").then((mod) => mod.metaData),
+  await import("./my-cats").then((mod) => mod.metaData),
 
 ];
 
