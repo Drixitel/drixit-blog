@@ -20,8 +20,8 @@ import csusb_melamine2 from "./images/4csusb/csusb_melamine2.jpg";
 import csusb_melaminebreak from "./images/4csusb/csusb_melaminebreak.jpg";
 import csusb_setup from "./images/4csusb/csusb_setup.png";
 
-import { PDFViewer, PDFViewer3, PDFViewer4 } from "./pdfviewer";
-import { PDFViewer2 } from "./pdfviewer";
+import { PDFViewer, PDFViewer2, PDFViewer4 } from "./pdfviewer";
+
 
 import { posts } from "@/content/posts";
 
