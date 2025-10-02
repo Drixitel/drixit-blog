@@ -8,7 +8,7 @@ export function CarouselImage(props: { src: string;}) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="aspect-[16/9] w-full h-72 flex items-center justify-center overflow-hidden rounded-lg">
+    <div className="aspect-[3/2] w-full h-84 flex items-center justify-center overflow-hidden rounded-lg">
     <img
       src={props.src}
       alt="Carousel Image"
@@ -20,3 +20,21 @@ export function CarouselImage(props: { src: string;}) {
     </div>
   );
 }
+
+export function CarouselImage2(props: { src: string;}) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="aspect-[1/1] w-full h-84 flex items-center justify-center overflow-hidden rounded-lg">
+    <img
+      src={props.src}
+      alt="Carousel Image"
+      onClick={() => {
+        setOpen((prev) => !prev);
+      }}
+      className={cn(open && "scale-150", "cursor-pointer transition-all")}
+    />
+    </div>
+  );
+}
+
