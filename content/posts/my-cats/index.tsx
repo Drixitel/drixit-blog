@@ -117,7 +117,7 @@ export function Render() {
             <CarouselContent>
               {images1.map((image, i) => (
                 <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/2">
-                  <CarouselImage src={image.src}></CarouselImage>
+                  <CarouselImage src={image} alt=""></CarouselImage>
                 </CarouselItem>
               ))}
             </CarouselContent>
@@ -141,7 +141,7 @@ export function Render() {
             <CarouselContent>
               {images2.map((image, i) => (
                 <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/2">
-                  <CarouselImage src={image.src}></CarouselImage>
+                  <CarouselImage src={image} alt=""></CarouselImage>
                 </CarouselItem>
               ))}
             </CarouselContent>
@@ -163,7 +163,7 @@ export function Render() {
             <CarouselContent>
               {images3.map((image, i) => (
                 <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/2">
-                  <CarouselImage2 src={image.src}></CarouselImage2>
+                  <CarouselImage2 src={image} alt =""></CarouselImage2>
                 </CarouselItem>
               ))}
             </CarouselContent>
