@@ -2,7 +2,7 @@ import { EntryPageComponentProps } from "@/content/resume-entries";
 import Image from "next/image";
 import { PDFViewer } from "./pdfviewer";
 
-export function cv(props: EntryPageComponentProps) {
+export function Cv(props: EntryPageComponentProps) {
   const { entry } = props;
 
   return (

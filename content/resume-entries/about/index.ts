@@ -1,5 +1,5 @@
 import { ResumeSection } from "..";
-import { cv } from "./cv";
+import { Cv } from "./cv";
 
 
 export const about: ResumeSection = {
@@ -10,7 +10,7 @@ export const about: ResumeSection = {
       date: "Updated 2025",
       description: "Highlights an elaborate history and personal milestones",
       tags: [],
-      RenderPage: cv,
+      RenderPage: Cv,
     },
     {
       title: "Github Repository",
