@@ -25,6 +25,7 @@ export const experience: ResumeSection = {
       date: "2023 - 2024",
       description: "R&D Software Developer",
       tags: [],
+      linkInternal: "/blog/research",
     },
     {
       title: "Circuit & Software Developer",

@@ -34,10 +34,17 @@ export type ResumeSectionComponent<
 type ResumeEntryLink =
   | {
       linkExternal?: never;
+      linkInternal?: never;
       RenderPage?: EntryPageComponent;
     }
   | {
       linkExternal?: string;
+      linkInternal?: never;
+      RenderPage?: never;
+    }
+  | {
+      linkExternal?: never;
+      linkInternal?: string;
       RenderPage?: never;
     };
 
