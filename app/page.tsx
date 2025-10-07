@@ -3,6 +3,7 @@ import { NameLg } from "../components/name";
 import { Descriptors } from "@/components/descriptors";
 import { RecentPosts } from "./recent-posts";
 import { Paper } from "@/components/paper";
+import GuessingGame from "./guessinggame";
 
 export default function Home() {
   return (
@@ -18,6 +19,8 @@ export default function Home() {
 
           <Descriptors />
         </section>
+
+        <GuessingGame />
 
         <RecentPosts />
       </Paper>
