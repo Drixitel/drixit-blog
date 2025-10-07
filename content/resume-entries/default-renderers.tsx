@@ -22,12 +22,24 @@ export function SectionDefault(props: ResumeSectionComponentProps) {
 
 export function EntryDefault(props: ResumeEntryComponentProps) {
   const sectionTitle = toSnakeCase(props.section.title);
-  const { title, date, location, description, RenderPage, linkExternal } =
-    props.entry;
+  const {
+    title,
+    date,
+    location,
+    description,
+    RenderPage,
+    linkExternal,
+    linkInternal,
+  } = props.entry;
 
+  // Determine the link based on available properties
+  // if render page exists, link to that page
+  // else if linkInternal exists, use that
+  // else if linkExternal exists, use that
+  // else no link
   const link = RenderPage
     ? `/resume/${sectionTitle}/${toSnakeCase(title)}`
-    : linkExternal;
+    : linkExternal || linkInternal;
 
   return (
     <div className="w-full border-l bg-muted/50 border-primary px-3 pt-1 pb-2 rounded-r">
