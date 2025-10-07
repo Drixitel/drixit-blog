@@ -2,14 +2,14 @@
 
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { useState } from "react";
+import { ComponentProps, useState } from "react";
 
-export function CarouselImage(props: { src: string;}) {
+export function CarouselImage(props: ComponentProps <typeof Image>) {
   const [open, setOpen] = useState(false);
 
   return (
     <div className="aspect-[3/2] w-full h-84 flex items-center justify-center overflow-hidden rounded-lg">
-    <img
+    <Image
       src={props.src}
       alt="Carousel Image"
       onClick={() => {
@@ -21,12 +21,12 @@ export function CarouselImage(props: { src: string;}) {
   );
 }
 
-export function CarouselImage2(props: { src: string;}) {
+export function CarouselImage2(props: ComponentProps <typeof Image>) {
   const [open, setOpen] = useState(false);
 
   return (
     <div className="aspect-[1/1] w-full h-84 flex items-center justify-center overflow-hidden rounded-lg">
-    <img
+    <Image
       src={props.src}
       alt="Carousel Image"
       onClick={() => {
